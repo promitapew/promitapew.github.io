@@ -1,0 +1,641 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Promita Pew · Product Analyst</title>
+<meta name="description" content="Promita Pew — Product Analyst in Ontario, Canada. Requirements, UAT, root-cause analysis and product data for eCommerce.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#faf6f1; --surface:#ffffff; --surface-2:#f3ece4; --ink:#2a2230; --muted:#6b6070;
+  --line:#e6ddd3; --accent:#8a3b6f; --accent-2:#c8794a; --accent-soft:#f4e4ee; --ok:#2f7d5b; --warn:#b4542f;
+  --shadow:0 1px 2px rgba(42,34,48,.06),0 8px 24px rgba(42,34,48,.06); --radius:16px;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#1a1620; --surface:#241f2b; --surface-2:#2d2735; --ink:#f1ebf2; --muted:#b3a8b8;
+    --line:#3a3242; --accent:#e08bbf; --accent-2:#f0a77c; --accent-soft:#3a2836; --ok:#6fcf9f; --warn:#f08a6a;
+    --shadow:0 1px 2px rgba(0,0,0,.3),0 8px 24px rgba(0,0,0,.25);
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#1a1620; --surface:#241f2b; --surface-2:#2d2735; --ink:#f1ebf2; --muted:#b3a8b8;
+  --line:#3a3242; --accent:#e08bbf; --accent-2:#f0a77c; --accent-soft:#3a2836; --ok:#6fcf9f; --warn:#f08a6a;
+  --shadow:0 1px 2px rgba(0,0,0,.3),0 8px 24px rgba(0,0,0,.25);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.6 Inter,system-ui,sans-serif;overflow-x:hidden}
+h1,h2,h3{font-family:Fraunces,Georgia,serif;font-weight:600;line-height:1.2;margin:0 0 .5em}
+h2{font-size:clamp(1.6rem,3vw,2.2rem)}
+a{color:var(--accent)}
+.wrap{max-width:1120px;margin:0 auto;padding:0 16px}
+section{padding:72px 0;scroll-margin-top:72px}
+.eyebrow{font-size:.78rem;letter-spacing:.12em;text-transform:uppercase;color:var(--accent-2);font-weight:600;margin-bottom:8px}
+.lead{color:var(--muted);max-width:680px}
+.btn{display:inline-flex;align-items:center;gap:8px;border:1px solid var(--line);background:var(--surface);color:var(--ink);padding:10px 16px;border-radius:999px;font:500 .92rem Inter,sans-serif;cursor:pointer;text-decoration:none;transition:.2s}
+.btn:hover{border-color:var(--accent);color:var(--accent)}
+.btn.primary{background:var(--accent);border-color:var(--accent);color:#fff}
+.btn.primary:hover{filter:brightness(1.08);color:#fff}
+.btn.small{padding:6px 12px;font-size:.82rem}
+.chip{display:inline-block;padding:4px 10px;border-radius:999px;background:var(--accent-soft);color:var(--accent);font-size:.78rem;font-weight:500;margin:3px 4px 3px 0}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:22px;box-shadow:var(--shadow)}
+.tabs{display:flex;flex-wrap:wrap;gap:8px;margin:20px 0 28px}
+.tab{border:1px solid var(--line);background:transparent;color:var(--muted);padding:7px 14px;border-radius:999px;cursor:pointer;font:500 .85rem Inter,sans-serif}
+.tab.active{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.hidden{display:none!important}
+
+/* nav */
+header{position:sticky;top:0;z-index:50;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.nav{display:flex;align-items:center;justify-content:space-between;height:64px;gap:12px}
+.logo{font-family:Fraunces,serif;font-weight:600;font-size:1.2rem;text-decoration:none;color:var(--ink)}
+.logo span{color:var(--accent)}
+.nav-links{display:flex;gap:22px;align-items:center}
+.nav-links a{color:var(--muted);text-decoration:none;font-size:.92rem}
+.nav-links a:hover{color:var(--accent)}
+.nav-actions{display:flex;gap:8px;align-items:center}
+.icon-btn{width:38px;height:38px;border-radius:50%;border:1px solid var(--line);background:var(--surface);color:var(--ink);cursor:pointer;font-size:1rem;display:inline-grid;place-items:center}
+.burger{display:none}
+.mobile-menu{display:none;flex-direction:column;padding:8px 16px 16px;border-bottom:1px solid var(--line);background:var(--bg)}
+.mobile-menu a{padding:10px 0;color:var(--ink);text-decoration:none;border-bottom:1px solid var(--line)}
+.mobile-menu.open{display:flex}
+@media (max-width:860px){.nav-links{display:none}.burger{display:inline-grid}.hide-sm{display:none}}
+
+/* hero */
+.hero{padding:64px 0 48px}
+.hero-grid{display:grid;grid-template-columns:1.4fr 1fr;gap:48px;align-items:center}
+.badge{display:inline-flex;align-items:center;gap:8px;padding:6px 12px;border-radius:999px;background:var(--surface);border:1px solid var(--line);font-size:.85rem;color:var(--muted)}
+.dot{width:8px;height:8px;border-radius:50%;background:var(--ok);box-shadow:0 0 0 4px color-mix(in srgb,var(--ok) 25%,transparent)}
+.hero h1{font-size:clamp(2.2rem,5vw,3.6rem);margin:18px 0 14px}
+.hero h1 em{font-style:italic;color:var(--accent)}
+.hero-actions{display:flex;flex-wrap:wrap;gap:10px;margin:24px 0 18px}
+.socials{display:flex;gap:16px;font-size:.92rem}
+.socials a{color:var(--muted);text-decoration:none}
+.socials a:hover{color:var(--accent)}
+.portrait{aspect-ratio:1;width:100%;max-width:340px;margin-left:auto;border-radius:44% 56% 52% 48%/48% 44% 56% 52%;background:linear-gradient(135deg,var(--accent),var(--accent-2));display:grid;place-items:center;color:#fff;font:600 5rem Fraunces,serif;box-shadow:var(--shadow);overflow:hidden}
+.portrait img{width:100%;height:100%;object-fit:cover}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:44px}
+.stat{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:18px}
+.stat b{display:block;font:600 1.9rem Fraunces,serif;color:var(--accent)}
+.stat span{font-size:.85rem;color:var(--muted)}
+@media (max-width:860px){.hero-grid{grid-template-columns:1fr}.portrait{max-width:200px;margin:0;font-size:3rem;order:-1}.stats{grid-template-columns:repeat(2,1fr)}}
+
+/* experience */
+.timeline{position:relative;padding-left:28px}
+.timeline:before{content:"";position:absolute;left:7px;top:6px;bottom:6px;width:2px;background:var(--line)}
+.entry{position:relative;margin-bottom:22px}
+.entry:before{content:"";position:absolute;left:-27px;top:26px;width:14px;height:14px;border-radius:50%;background:var(--surface);border:3px solid var(--accent)}
+.entry .meta{display:flex;flex-wrap:wrap;justify-content:space-between;gap:6px;margin-bottom:6px}
+.entry h3{font-size:1.15rem;margin:0}
+.entry .org{color:var(--accent);font-weight:600;font-size:.95rem}
+.entry .when{color:var(--muted);font-size:.85rem}
+.entry ul{margin:10px 0;padding-left:18px}
+.entry li{margin-bottom:4px}
+
+/* projects */
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:18px}
+@media (max-width:400px){.grid{grid-template-columns:1fr}}
+.case h3{font-size:1.2rem}
+.case .metric{display:inline-block;font:600 1.4rem Fraunces,serif;color:var(--accent-2);margin-bottom:6px}
+.case dl{margin:10px 0}
+.case dt{font-weight:600;font-size:.82rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-top:8px}
+.case dd{margin:2px 0 0}
+.note{font-size:.78rem;color:var(--muted);margin-top:12px;font-style:italic}
+
+/* lab */
+.lab-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+@media (max-width:860px){.lab-grid{grid-template-columns:1fr}}
+.lab h3{font-size:1.15rem}
+.lab p.sub{color:var(--muted);font-size:.9rem;margin-top:0}
+.controls{display:flex;flex-wrap:wrap;gap:8px;margin:12px 0}
+.tbl-wrap{overflow-x:auto;border:1px solid var(--line);border-radius:10px}
+table{border-collapse:collapse;width:100%;font-size:.82rem}
+th,td{padding:7px 9px;border-bottom:1px solid var(--line);text-align:left;white-space:nowrap}
+th{background:var(--surface-2);font-weight:600}
+tr.bad td{background:color-mix(in srgb,var(--warn) 12%,transparent)}
+tr.fixed td{background:color-mix(in srgb,var(--ok) 12%,transparent)}
+.counters{display:flex;gap:18px;flex-wrap:wrap;font-size:.85rem;color:var(--muted);margin-top:10px}
+.counters b{color:var(--ink);font-size:1.1rem}
+.field{display:flex;flex-direction:column;gap:4px;font-size:.8rem;color:var(--muted)}
+input[type=number],input[type=text],textarea,select{font:inherit;font-size:.88rem;padding:7px 9px;border-radius:8px;border:1px solid var(--line);background:var(--bg);color:var(--ink);width:100%}
+textarea{font-family:ui-monospace,Menlo,monospace;min-height:90px}
+.rice-row{display:grid;grid-template-columns:2fr repeat(4,1fr);gap:6px;align-items:end;margin-bottom:6px}
+.bar{height:8px;border-radius:4px;background:var(--accent);transition:width .4s}
+.rank{display:grid;grid-template-columns:1fr 3fr auto;gap:8px;align-items:center;font-size:.85rem;margin:6px 0}
+.ab-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:8px}
+.verdict{margin-top:10px;padding:10px 12px;border-radius:10px;background:var(--surface-2);font-size:.9rem}
+.out{font-family:ui-monospace,Menlo,monospace;font-size:.8rem;margin-top:8px}
+
+/* skills & creds */
+.skill-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:18px}
+.skill-grid h3{font-size:1.05rem}
+.cred-list{display:grid;gap:12px}
+.cred{display:flex;gap:14px;align-items:flex-start}
+.cred .ico{flex:none;width:42px;height:42px;border-radius:12px;background:var(--accent-soft);display:grid;place-items:center;font-size:1.2rem}
+
+/* contact */
+.contact{text-align:center}
+.contact .card{max-width:640px;margin:0 auto;padding:36px 22px}
+.contact-row{display:flex;flex-wrap:wrap;justify-content:center;gap:10px;margin-top:18px}
+footer{padding:28px 0;border-top:1px solid var(--line);color:var(--muted);font-size:.85rem;text-align:center}
+
+/* modal */
+.overlay{position:fixed;inset:0;background:rgba(20,14,24,.55);z-index:100;display:none;align-items:flex-start;justify-content:center;padding:32px 12px;overflow-y:auto}
+.overlay.open{display:flex}
+.modal{background:var(--surface);color:var(--ink);border-radius:var(--radius);max-width:820px;width:100%;padding:28px;position:relative}
+.modal .close{position:absolute;top:14px;right:14px}
+.resume h1{font-size:1.9rem;margin-bottom:2px}
+.resume h4{font-family:Fraunces,serif;font-size:1.05rem;margin:20px 0 6px;border-bottom:1px solid var(--line);padding-bottom:4px}
+.resume .job{margin-bottom:12px}
+.resume .job b{display:block}
+.resume ul{margin:4px 0;padding-left:18px;font-size:.92rem}
+
+/* tour */
+.tour-tip{position:fixed;z-index:120;max-width:320px;background:var(--surface);color:var(--ink);border:1px solid var(--line);border-radius:14px;padding:16px;box-shadow:0 12px 40px rgba(0,0,0,.25);display:none}
+.tour-tip h4{margin:0 0 6px;font-family:Fraunces,serif}
+.tour-tip p{margin:0 0 12px;font-size:.9rem;color:var(--muted)}
+.tour-spot{position:fixed;z-index:110;border-radius:16px;box-shadow:0 0 0 9999px rgba(20,14,24,.55);pointer-events:none;transition:all .35s;display:none}
+
+/* assistant */
+.chat-fab{position:fixed;right:18px;bottom:18px;z-index:90;border-radius:999px;padding:12px 18px;box-shadow:var(--shadow)}
+@media (max-width:600px){.chat-fab .lbl{display:none}.chat-fab{padding:12px 14px}}
+.chat{position:fixed;right:18px;bottom:78px;z-index:95;width:min(360px,calc(100vw - 32px));background:var(--surface);border:1px solid var(--line);border-radius:18px;box-shadow:0 12px 40px rgba(0,0,0,.2);display:none;flex-direction:column;max-height:70vh}
+.chat.open{display:flex}
+.chat-head{padding:14px 16px;border-bottom:1px solid var(--line);display:flex;justify-content:space-between;align-items:center}
+.chat-body{padding:12px 16px;overflow-y:auto;flex:1;font-size:.9rem}
+.msg{margin:8px 0;padding:9px 12px;border-radius:12px;max-width:90%}
+.msg.bot{background:var(--surface-2)}
+.msg.me{background:var(--accent);color:#fff;margin-left:auto}
+.quick{display:flex;flex-wrap:wrap;gap:6px;padding:0 16px 8px}
+.chat form{display:flex;gap:6px;padding:10px 12px;border-top:1px solid var(--line)}
+.toast{position:fixed;left:50%;bottom:24px;transform:translateX(-50%);background:var(--ink);color:var(--bg);padding:10px 16px;border-radius:999px;font-size:.88rem;z-index:130;opacity:0;transition:.3s;pointer-events:none}
+.toast.show{opacity:1}
+
+@media print{
+  body.printing > *:not(#resumeOverlay){display:none!important}
+  body.printing #resumeOverlay{position:static;display:block;background:none;padding:0}
+  body.printing .modal{box-shadow:none;border:0;max-width:none;padding:0}
+  body.printing .no-print{display:none!important}
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap nav">
+    <a href="#top" class="logo">Promita<span>.</span></a>
+    <nav class="nav-links">
+      <a href="#experience">Experience</a>
+      <a href="#work">Case Studies</a>
+      <a href="#lab">Product Lab</a>
+      <a href="#skills">Skills</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <div class="nav-actions">
+      <button class="btn small hide-sm" id="tourBtn">Recruiter tour</button>
+      <button class="btn small primary" data-open-resume>Resume</button>
+      <button class="icon-btn" id="themeBtn" aria-label="Toggle theme">☾</button>
+      <button class="icon-btn burger" id="burger" aria-label="Menu">☰</button>
+    </div>
+  </div>
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="#experience">Experience</a><a href="#work">Case Studies</a><a href="#lab">Product Lab</a><a href="#skills">Skills</a><a href="#contact">Contact</a>
+    <a href="#" id="tourBtnM">Recruiter tour</a>
+  </div>
+</header>
+
+<main id="top">
+  <section class="hero" id="hero">
+    <div class="wrap">
+      <div class="hero-grid">
+        <div>
+          <span class="badge"><span class="dot"></span> Open to opportunities · Ontario, Canada</span>
+          <h1>Turning messy product data into <em>products that work.</em></h1>
+          <p class="lead">Product Analyst with 6+ years across retail eCommerce, telecom and SaaS. I translate business needs into requirements, user stories and UAT plans, and trace complex product and catalog issues to their root cause — then work with merchants, engineers and leadership to fix them for good.</p>
+          <div class="hero-actions">
+            <a class="btn primary" href="#work">Explore case studies</a>
+            <button class="btn" id="tourBtn2">Start recruiter tour</button>
+            <button class="btn" data-open-resume>View resume</button>
+          </div>
+          <div class="socials">
+            <a href="https://www.linkedin.com/in/promitapew/" target="_blank" rel="noopener">LinkedIn ↗</a>
+            <a href="mailto:promitapew@gmail.com">Email ↗</a>
+            <a href="https://promitapew.wordpress.com" target="_blank" rel="noopener">Blog ↗</a>
+          </div>
+        </div>
+        <div class="portrait" aria-label="Promita Pew">PP</div>
+      </div>
+      <div class="stats" id="stats">
+        <div class="stat"><b data-count="6" data-suffix="+">0</b><span>years in product &amp; eCommerce</span></div>
+        <div class="stat"><b data-count="160" data-suffix="K+">0</b><span>catalog items owned</span></div>
+        <div class="stat"><b data-count="20" data-suffix="+">0</b><span>product launches through UAT</span></div>
+        <div class="stat"><b data-count="1.2" data-prefix="$" data-suffix="M" data-dec="1">0</b><span>recurring sales protected</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="experience">
+    <div class="wrap">
+      <div class="eyebrow">Experience &amp; impact</div>
+      <h2>Where I've made a difference</h2>
+      <div class="tabs" data-filter-group="exp">
+        <button class="tab active" data-filter="all">All milestones</button>
+        <button class="tab" data-filter="product">Product &amp; business analysis</button>
+        <button class="tab" data-filter="data">Catalog &amp; eCommerce ops</button>
+        <button class="tab" data-filter="edu">Education &amp; certs</button>
+      </div>
+      <div class="timeline" id="expList"></div>
+    </div>
+  </section>
+
+  <section id="work" style="background:var(--surface-2)">
+    <div class="wrap">
+      <div class="eyebrow">Case studies</div>
+      <h2>Problems I've untangled</h2>
+      <p class="lead">Each one follows the same path: understand the problem, find the real cause, fix it with the right people, and measure the result.</p>
+      <div class="tabs" data-filter-group="case">
+        <button class="tab active" data-filter="all">All</button>
+        <button class="tab" data-filter="rca">Root-cause analysis</button>
+        <button class="tab" data-filter="audit">Data audits</button>
+        <button class="tab" data-filter="delivery">Product delivery</button>
+      </div>
+      <div class="grid" id="caseList"></div>
+    </div>
+  </section>
+
+  <section id="lab">
+    <div class="wrap">
+      <div class="eyebrow">Product lab</div>
+      <h2>Try how I work</h2>
+      <p class="lead">Small interactive demos of the everyday tools of product analysis. All data here is made up.</p>
+      <div class="lab-grid">
+
+        <div class="card lab" id="labAudit">
+          <h3>Catalog health check</h3>
+          <p class="sub">Run an audit on sample items, see what's broken, apply fixes and re-check.</p>
+          <div class="controls">
+            <button class="btn small primary" id="auditRun">Run audit</button>
+            <button class="btn small" id="auditFix" disabled>Apply fixes</button>
+            <button class="btn small" id="auditReset">Reset</button>
+          </div>
+          <div class="tbl-wrap"><table id="auditTbl"></table></div>
+          <div class="counters"><span>Checked <b id="cChecked">0</b></span><span>Issues <b id="cIssues">0</b></span><span>Fixed <b id="cFixed">0</b></span></div>
+        </div>
+
+        <div class="card lab" id="labRice">
+          <h3>Backlog prioritizer (RICE)</h3>
+          <p class="sub">Score features by Reach × Impact × Confidence ÷ Effort. Edit the numbers to re-rank.</p>
+          <div class="rice-row" style="font-size:.75rem;color:var(--muted)"><span>Feature</span><span>Reach</span><span>Impact</span><span>Conf. %</span><span>Effort</span></div>
+          <div id="riceRows"></div>
+          <div id="riceRank" style="margin-top:12px"></div>
+        </div>
+
+        <div class="card lab" id="labSql">
+          <h3>SQL playground</h3>
+          <p class="sub">A real SQLite database running in your browser. Pick a query or write your own (Ctrl+Enter to run).</p>
+          <div class="controls">
+            <button class="btn small" data-q="0">Visible but out of stock</button>
+            <button class="btn small" data-q="1">Barcode mismatches</button>
+            <button class="btn small" data-q="2">Issues by department</button>
+          </div>
+          <textarea id="sqlIn" spellcheck="false"></textarea>
+          <div class="controls"><button class="btn small primary" id="sqlRun">Run query</button><span id="sqlStatus" style="font-size:.8rem;color:var(--muted);align-self:center">Loading database…</span></div>
+          <div class="tbl-wrap"><table id="sqlOut"></table></div>
+        </div>
+
+        <div class="card lab" id="labAb">
+          <h3>A/B test checker</h3>
+          <p class="sub">Did the new checkout really convert better? A two-proportion z-test.</p>
+          <div class="ab-grid">
+            <label class="field">Visitors A<input type="number" id="abNa" value="5000" min="1"></label>
+            <label class="field">Conversions A<input type="number" id="abXa" value="400" min="0"></label>
+            <label class="field">Visitors B<input type="number" id="abNb" value="5000" min="1"></label>
+            <label class="field">Conversions B<input type="number" id="abXb" value="460" min="0"></label>
+          </div>
+          <div class="verdict" id="abOut"></div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <section id="skills" style="background:var(--surface-2)">
+    <div class="wrap">
+      <div class="eyebrow">Skills</div>
+      <h2>What I bring to a team</h2>
+      <div class="skill-grid">
+        <div class="card"><h3>Product &amp; business analysis</h3>
+          <span class="chip">Requirements gathering</span><span class="chip">BRDs</span><span class="chip">User stories</span><span class="chip">Acceptance criteria</span><span class="chip">UAT</span><span class="chip">Process mapping</span><span class="chip">Agile</span></div>
+        <div class="card"><h3>Data &amp; analysis</h3>
+          <span class="chip">SQL</span><span class="chip">Excel</span><span class="chip">Tableau</span><span class="chip">Power BI</span><span class="chip">Looker</span><span class="chip">Google Analytics</span><span class="chip">Mixpanel</span><span class="chip">Root-cause analysis</span></div>
+        <div class="card"><h3>PIM &amp; eCommerce</h3>
+          <span class="chip">Stibo STEP</span><span class="chip">Item360</span><span class="chip">Supplier One</span><span class="chip">iSAM</span><span class="chip">Magento</span><span class="chip">Shopify</span><span class="chip">Catalog data quality</span></div>
+        <div class="card"><h3>Leadership &amp; collaboration</h3>
+          <span class="chip">Stakeholder management</span><span class="chip">Cross-functional coordination</span><span class="chip">Escalation management</span><span class="chip">Mentoring</span><span class="chip">Facilitation</span><span class="chip">JIRA</span><span class="chip">ServiceNow</span><span class="chip">Confluence</span><span class="chip">Salesforce</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="credentials">
+    <div class="wrap">
+      <div class="eyebrow">Credentials &amp; recognition</div>
+      <h2>Learning and recognition</h2>
+      <div class="cred-list">
+        <div class="card cred"><div class="ico">🏆</div><div><b>Above &amp; Beyond Baton Award</b> · Walmart Canada, 2026<br><span style="color:var(--muted);font-size:.9rem">Recognized by leadership for analysis, ownership and team impact within 4 months of joining.</span></div></div>
+        <div class="card cred"><div class="ico">🎓</div><div><b>Master of Management, Logistics &amp; Supply Chain</b> · University of Windsor, 2022–2023<br><span style="color:var(--muted);font-size:.9rem">Dean's Award for Academic Excellence · Graduate Student Mentor · VP Marketing, MOM Society</span></div></div>
+        <div class="card cred"><div class="ico">🎓</div><div><b>Bachelor of Business Administration, Marketing</b> · Jahangirnagar University</div></div>
+        <div class="card cred"><div class="ico">📜</div><div><b>Google Data Analytics Certificate</b> · DataCamp: SQL, Power BI · LinkedIn Learning: Agile Fundamentals, Project Management</div></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="contact" style="background:var(--surface-2)">
+    <div class="wrap">
+      <div class="card">
+        <span class="badge"><span class="dot"></span> Open to Product Analyst, Business Analyst &amp; Product Owner roles</span>
+        <h2 style="margin-top:16px">Let's talk</h2>
+        <p class="lead" style="margin:0 auto">Hiring for a role where clean data and clear requirements matter? I'd love to hear about it.</p>
+        <div class="contact-row">
+          <a class="btn primary" id="mailBtn" href="#">Send a message</a>
+          <button class="btn" data-copy="promitapew@gmail.com">Copy email</button>
+          <button class="btn" data-copy="https://www.linkedin.com/in/promitapew/">Copy LinkedIn</button>
+          <button class="btn" data-open-resume>Resume</button>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>© <span id="yr"></span> Promita Pew</footer>
+
+<div class="overlay" id="resumeOverlay" aria-hidden="true">
+  <div class="modal resume" role="dialog" aria-label="Resume">
+    <button class="icon-btn close no-print" data-close>✕</button>
+    <div class="tabs no-print" data-filter-group="resume" style="margin-top:0;padding-right:44px">
+      <button class="tab active" data-filter="all">Show all</button>
+      <button class="tab" data-filter="product">Product &amp; BA</button>
+      <button class="tab" data-filter="data">Catalog &amp; eCommerce</button>
+      <button class="btn small primary" id="printBtn" style="margin-left:auto">Print / Save as PDF</button>
+    </div>
+    <h1>Promita Pew</h1>
+    <div style="color:var(--muted);font-size:.9rem">Product Analyst · Ontario, Canada · promitapew@gmail.com · linkedin.com/in/promitapew</div>
+    <h4>Summary</h4>
+    <p style="font-size:.92rem;margin:0">Product Analyst with 6+ years of experience in retail eCommerce, telecom and SaaS, including Canadian experience at Walmart Canada and Shopify. Skilled in turning business needs into clear requirements, user stories and UAT plans, and in using data to find the root cause of complex product and catalog issues. Collaborative communicator who builds trust with merchants, engineering teams and leadership.</p>
+    <h4>Experience</h4>
+    <div id="resumeJobs"></div>
+    <h4>Education</h4>
+    <ul><li>Master of Management, Logistics &amp; Supply Chain — University of Windsor (Sep 2022 – Dec 2023)</li><li>BBA, Marketing — Jahangirnagar University</li></ul>
+    <h4>Skills</h4>
+    <ul><li>Requirements, user stories, UAT, root-cause analysis, process mapping, Agile</li><li>SQL, Excel, Tableau, Power BI, Looker · Stibo STEP, Magento, Shopify · JIRA, ServiceNow, Confluence, Salesforce</li></ul>
+  </div>
+</div>
+
+<div class="tour-spot" id="tourSpot"></div>
+<div class="tour-tip" id="tourTip"><h4 id="tourTitle"></h4><p id="tourText"></p>
+  <div style="display:flex;gap:8px;justify-content:space-between;align-items:center">
+    <span id="tourStep" style="font-size:.8rem;color:var(--muted)"></span>
+    <span><button class="btn small" id="tourPrev">Back</button> <button class="btn small primary" id="tourNext">Next</button></span>
+  </div>
+  <button class="icon-btn" id="tourClose" style="position:absolute;top:8px;right:8px;width:28px;height:28px;font-size:.8rem">✕</button>
+</div>
+
+<button class="btn primary chat-fab" id="chatFab">💬<span class="lbl"> Ask about Promita</span></button>
+<div class="chat" id="chat">
+  <div class="chat-head"><b>Résumé assistant</b><button class="icon-btn" id="chatClose" style="width:30px;height:30px">✕</button></div>
+  <div class="chat-body" id="chatBody"></div>
+  <div class="quick" id="chatQuick"></div>
+  <form id="chatForm"><input type="text" id="chatIn" placeholder="Ask about experience, skills…" autocomplete="off"><button class="btn small primary">Send</button></form>
+</div>
+<div class="toast" id="toast"></div>
+
+<script>
+const EXP = [
+  {cat:"data", role:"Product Information Analyst, Digital Content (Ecommerce)", org:"Walmart Canada", when:"Apr 2026 – Present · Mississauga, ON",
+   bullets:["Own catalog health for ~160,000 Grocery items across 6 departments, partnering with 30 merchants and 50+ cross-functional stakeholders.",
+            "Diagnosed a 2-year-old offer defect on top-selling products through cross-system data analysis, protecting ~$1.2M in recurring sales.",
+            "Led root-cause analysis across 5 systems to resolve barcode mismatches behind wrong-item picks in stores; authored the RCA for leadership.",
+            "Reconciled ~23,000 Black Friday items across 3 data sources, flagging ~8,000 visibility errors before launch.",
+            "Designed UAT test cases that exposed a visibility workaround bypassing inventory checks; escalated it as a product defect.",
+            "Above & Beyond Baton Award within 4 months; host team feedback sessions and a cross-team Learn Series."],
+   tags:["Stibo STEP","SQL","UAT","Root-cause analysis","JIRA"]},
+  {cat:"edu", role:"Above & Beyond Baton Award", org:"Walmart Canada", when:"2026", bullets:["Recognized by leadership for analysis, ownership and team impact."], tags:["Recognition"]},
+  {cat:"data", role:"Technical Support Specialist, Global Merchant Support", org:"Shopify", when:"Feb 2025 – Mar 2026 · Remote, ON",
+   bullets:["Diagnosed catalog, checkout and payment defects for 1,200+ merchants using logs, APIs and SQL; escalated reproducible bug reports to Engineering.",
+            "Payments subject-matter expert; tested a new chat escalation workflow with Product and Engineering.",
+            "Maintained 91%+ first-contact resolution; trained and mentored 6 new hires."],
+   tags:["APIs","SQL","Defect triage","Mentoring"]},
+  {cat:"data", role:"Technical Support Specialist (AT&T account)", org:"Sutherland Global", when:"Feb 2024 – Feb 2025 · Windsor, ON",
+   bullets:["Diagnosed network and TV service issues from system logs, fed repeat problems into SOP updates, and mentored 4 new hires."],
+   tags:["Log analysis","SOPs"]},
+  {cat:"edu", role:"Master of Management, Logistics & Supply Chain", org:"University of Windsor", when:"Sep 2022 – Dec 2023",
+   bullets:["Dean's Award for Academic Excellence · Graduate Student Mentor · VP Marketing, MOM Society."], tags:["Supply chain","Analytics"]},
+  {cat:"product", role:"Data Product & Pricing Specialist", org:"Robi Axiata (telecom)", when:"Jul 2021 – Aug 2022 · Bangladesh",
+   bullets:["Owned requirements for 20+ data product launches: BRDs, user stories, acceptance criteria and UAT through go-live.",
+            "Led a revamp of the digital internet product with Engineering, Marketing and BI, driving a 9% revenue lift.",
+            "Simplified a 200+ product portfolio into 50 offerings to meet a regulatory requirement.",
+            "Product liaison for national biometric SIM verification, testing activation flows for 10M+ users.",
+            "Co-designed chatbot support flows that lifted retention 15%."],
+   tags:["BRDs","User stories","UAT","Pricing"]},
+  {cat:"data", role:"E-Commerce Operations Analyst", org:"BRAC Aarong", when:"Apr 2020 – Jun 2021 · Bangladesh",
+   bullets:["Managed the Magento product catalog: product setup, pricing and inventory sync.",
+            "Contributed to a checkout redesign that lifted conversion 12%; supported the US site launch and peak campaigns."],
+   tags:["Magento","Conversion","Catalog"]},
+  {cat:"product", role:"Junior Business Analyst", org:"BRAC Mayalogy (Maya Apa app)", when:"Oct 2018 – Mar 2020 · Bangladesh",
+   bullets:["Translated user research and partner needs into product requirements; analyzed usage in Mixpanel and Google Analytics; ran UAT in JIRA.",
+            "Contributed to raising $2.2M in seed funding and launching 10 digital wellbeing clinics."],
+   tags:["Requirements","Mixpanel","UAT"]},
+  {cat:"edu", role:"Bachelor of Business Administration, Marketing", org:"Jahangirnagar University", when:"Bangladesh", bullets:[], tags:["Marketing"]}
+];
+const CASES = [
+  {cat:"rca", metric:"~$1.2M protected", title:"The best-seller nobody could buy", tags:["Root-cause analysis","Cross-system data","Stakeholders"],
+   problem:"A top-selling product showed out of stock in stores that had it on the shelf, while a non-sellable duplicate stayed buyable — for two years.",
+   approach:"Compared offer records across catalog and inventory systems and found two offers with their roles reversed. Coordinated catalog and inventory teams through a sync failure.",
+   result:"Correct offer live and verified in store; recurring sales protected and a request to scan for similar mismatches."},
+  {cat:"rca", metric:"5 systems traced", title:"Wrong items picked in stores", tags:["Root-cause analysis","Product identifiers","RCA write-up"],
+   problem:"Stores in one region kept picking the wrong product for online orders.",
+   approach:"Mapped every product identifier across five systems and proved a barcode update had never reached the product database.",
+   result:"Mapping corrected, store reports stopped, and a root-cause report presented to leadership."},
+  {cat:"audit", metric:"~8,000 errors caught", title:"Black Friday readiness audit", tags:["Data reconciliation","Peak events","Rollback planning"],
+   problem:"~23,000 event items needed the right online visibility settings before the biggest sales week of the year.",
+   approach:"Reconciled three source lists, segmented items by offer type and flagged edge cases for business decisions instead of guessing.",
+   result:"~8,000 corrections identified before launch, with a baseline saved for a full rollback after the event."},
+  {cat:"audit", metric:"12 of 13 failed", title:"Auditing an AI grouping tool", tags:["AI validation","Sampling","Escalation"],
+   problem:"An automated tool was grouping unrelated products as variants of each other.",
+   approach:"Manually reviewed samples, found items missing from the tool's own report, and showed 12 of 13 sampled records were invalid.",
+   result:"Incorrect groups rolled back and a wider impact review launched."},
+  {cat:"delivery", metric:"+9% revenue", title:"Revamping a digital internet product", tags:["Requirements","UAT","Telecom"],
+   problem:"A core digital internet product was underperforming in a crowded telecom market.",
+   approach:"Wrote requirements and user stories, aligned Engineering, Marketing and BI, and led UAT to launch.",
+   result:"9% revenue lift — one of 20+ launches taken from requirements to go-live."},
+  {cat:"delivery", metric:"+12% conversion", title:"Smoother checkout for a lifestyle retailer", tags:["eCommerce","Conversion","Magento"],
+   problem:"Shoppers were dropping off during checkout on a large retailer's website.",
+   approach:"Contributed to the checkout redesign and tracked conversion, traffic and campaign KPIs.",
+   result:"Checkout conversion improved 12%."}
+];
+
+const $ = s => document.querySelector(s), $$ = s => [...document.querySelectorAll(s)];
+const store = { get(k){try{return localStorage.getItem(k)}catch(e){return null}}, set(k,v){try{localStorage.setItem(k,v)}catch(e){}} };
+function toast(t){const el=$("#toast");el.textContent=t;el.classList.add("show");setTimeout(()=>el.classList.remove("show"),1800)}
+$("#yr").textContent = new Date().getFullYear();
+
+const root=document.documentElement;
+function applyTheme(t){ if(t) root.setAttribute("data-theme",t); const dark = t ? t==="dark" : matchMedia("(prefers-color-scheme: dark)").matches; $("#themeBtn").textContent = dark ? "☀" : "☾"; }
+applyTheme(store.get("theme"));
+$("#themeBtn").onclick=()=>{const cur=root.getAttribute("data-theme")||(matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light");const n=cur==="dark"?"light":"dark";store.set("theme",n);applyTheme(n)};
+
+$("#burger").onclick=()=>$("#mobileMenu").classList.toggle("open");
+$$("#mobileMenu a").forEach(a=>a.addEventListener("click",()=>$("#mobileMenu").classList.remove("open")));
+
+$("#expList").innerHTML = EXP.map(e=>`<div class="entry card" data-cat="${e.cat}">
+  <div class="meta"><div><h3>${e.role}</h3><div class="org">${e.org}</div></div><div class="when">${e.when}</div></div>
+  ${e.bullets.length?`<ul>${e.bullets.map(b=>`<li>${b}</li>`).join("")}</ul>`:""}
+  <div>${e.tags.map(t=>`<span class="chip">${t}</span>`).join("")}</div></div>`).join("");
+$("#caseList").innerHTML = CASES.map(c=>`<article class="card case" data-cat="${c.cat}">
+  <span class="metric">${c.metric}</span><h3>${c.title}</h3>
+  <dl><dt>Problem</dt><dd>${c.problem}</dd><dt>Approach</dt><dd>${c.approach}</dd><dt>Result</dt><dd>${c.result}</dd></dl>
+  <div>${c.tags.map(t=>`<span class="chip">${t}</span>`).join("")}</div>
+  <div class="note">Employer work — details generalized to protect confidential information.</div></article>`).join("");
+$("#resumeJobs").innerHTML = EXP.filter(e=>e.cat!=="edu").map(e=>`<div class="job" data-cat="${e.cat}"><b>${e.role} — ${e.org}</b><span style="color:var(--muted);font-size:.85rem">${e.when}</span><ul>${e.bullets.map(b=>`<li>${b}</li>`).join("")}</ul></div>`).join("");
+
+$$("[data-filter-group]").forEach(group=>{
+  const key=group.dataset.filterGroup;
+  const targets = key==="exp" ? () => $$("#expList .entry") : key==="case" ? () => $$("#caseList .case") : () => $$("#resumeJobs .job");
+  group.querySelectorAll(".tab").forEach(tab=>tab.addEventListener("click",()=>{
+    group.querySelectorAll(".tab").forEach(t=>t.classList.remove("active")); tab.classList.add("active");
+    const f=tab.dataset.filter; targets().forEach(el=>el.classList.toggle("hidden", f!=="all" && el.dataset.cat!==f));
+  }));
+});
+
+const io = new IntersectionObserver(es=>es.forEach(en=>{ if(!en.isIntersecting) return; io.disconnect();
+  $$("[data-count]").forEach(el=>{const end=+el.dataset.count,dec=+(el.dataset.dec||0),pre=el.dataset.prefix||"",suf=el.dataset.suffix||"";let t0=null;
+    const step=ts=>{t0=t0||ts;const p=Math.min((ts-t0)/1200,1);el.textContent=pre+(end*(1-Math.pow(1-p,3))).toFixed(dec)+suf;if(p<1)requestAnimationFrame(step)};requestAnimationFrame(step)});
+}),{threshold:.3});
+io.observe($("#stats"));
+
+const ov=$("#resumeOverlay");
+$$("[data-open-resume]").forEach(b=>b.addEventListener("click",()=>{ov.classList.add("open");ov.setAttribute("aria-hidden","false")}));
+ov.addEventListener("click",e=>{if(e.target===ov||e.target.closest("[data-close]")){ov.classList.remove("open");ov.setAttribute("aria-hidden","true")}});
+$("#printBtn").onclick=()=>{document.body.classList.add("printing");window.print();setTimeout(()=>document.body.classList.remove("printing"),300)};
+document.addEventListener("keydown",e=>{if(e.key==="Escape"){ov.classList.remove("open");endTour();}});
+
+$("#mailBtn").href="mailto:promitapew@gmail.com?subject="+encodeURIComponent("Opportunity for Promita")+"&body="+encodeURIComponent("Hi Promita,\n\nI came across your portfolio and would like to talk about a role at ...\n\nBest,\n");
+$$("[data-copy]").forEach(b=>b.addEventListener("click",async()=>{try{await navigator.clipboard.writeText(b.dataset.copy);toast("Copied!")}catch(e){toast(b.dataset.copy)}}));
+
+const ITEMS0=[
+ {id:"1001",name:"Basmati Rice 4kg",img:true,pim:"0062823511",site:"0062823511",oh:42,visible:true},
+ {id:"1002",name:"Coffee Pods 30ct",img:true,pim:"0063209112",site:"0063209097",oh:120,visible:true},
+ {id:"1003",name:"White Bread 675g",img:false,pim:"0068721003",site:"0068721003",oh:15,visible:true},
+ {id:"1004",name:"Greek Yogurt 750g",img:true,pim:"0005557712",site:"0005557712",oh:0,visible:true},
+ {id:"1005",name:"Frozen Pizza",img:true,pim:"0071641172",site:"0071641172",oh:33,visible:true},
+ {id:"1006",name:"Halloween Candy Mix",img:false,pim:"0066343188",site:"0066343188",oh:0,visible:true},
+ {id:"1007",name:"Oat Cereal 500g",img:true,pim:"0063816074",site:"0063816074",oh:58,visible:true},
+ {id:"1008",name:"Mango Juice 1L",img:true,pim:"0062773528",site:"0062773528",oh:9,visible:true}];
+let items, audited=false, fixedCount=0;
+function issuesOf(i){const r=[];if(!i.img)r.push("Missing image");if(i.pim!==i.site)r.push("Barcode mismatch");if(i.oh===0&&i.visible)r.push("Visible but OOS");return r}
+function drawAudit(){
+  $("#auditTbl").innerHTML="<tr><th>Item</th><th>On hand</th><th>Status</th></tr>"+items.map(i=>{const is=issuesOf(i);const cls=!audited?"":is.length?"bad":i._fixed?"fixed":"";
+    const st=!audited?"—":is.length?is.join(", "):(i._fixed?"✓ Fixed":"✓ OK");return `<tr class="${cls}"><td>${i.name}</td><td>${i.oh}</td><td>${st}</td></tr>`}).join("");
+  const n=audited?items.reduce((a,i)=>a+issuesOf(i).length,0):0;
+  $("#cChecked").textContent=audited?items.length:0;$("#cIssues").textContent=n;$("#cFixed").textContent=fixedCount;$("#auditFix").disabled=!audited||n===0;
+}
+function resetAudit(){items=ITEMS0.map(o=>({...o}));audited=false;fixedCount=0;drawAudit()}
+$("#auditRun").onclick=()=>{audited=true;drawAudit();toast("Audit complete")};
+$("#auditFix").onclick=()=>{items.forEach(i=>{const n=issuesOf(i).length;if(n){fixedCount+=n;i._fixed=true;i.img=true;i.site=i.pim;if(i.oh===0)i.visible=false}});drawAudit();toast("Fixes applied — re-run to verify")};
+$("#auditReset").onclick=resetAudit; resetAudit();
+
+const RICE=[{f:"Barcode mismatch alerts",r:4000,i:2,c:80,e:3},{f:"Bulk image upload fix",r:1500,i:1,c:90,e:2},{f:"Out-of-stock visibility rule",r:8000,i:3,c:70,e:5},{f:"Supplier self-serve help",r:600,i:1,c:50,e:1}];
+$("#riceRows").innerHTML=RICE.map((x,k)=>`<div class="rice-row"><input type="text" value="${x.f}" data-k="${k}" data-p="f">${["r","i","c","e"].map(p=>`<input type="number" min="0" value="${x[p]}" data-k="${k}" data-p="${p}">`).join("")}</div>`).join("");
+function drawRice(){const sc=RICE.map(x=>({f:x.f,s:x.e>0?x.r*x.i*(x.c/100)/x.e:0})).sort((a,b)=>b.s-a.s);const max=sc[0].s||1;
+  $("#riceRank").innerHTML=sc.map((x,k)=>`<div class="rank"><span>#${k+1} ${x.f}</span><div style="background:var(--surface-2);border-radius:4px"><div class="bar" style="width:${(x.s/max*100).toFixed(0)}%"></div></div><b>${Math.round(x.s).toLocaleString()}</b></div>`).join("")}
+$("#riceRows").addEventListener("input",e=>{const t=e.target,k=+t.dataset.k,p=t.dataset.p;RICE[k][p]=p==="f"?t.value:+t.value;drawRice()});drawRice();
+
+function normCdf(z){const t=1/(1+.2316419*Math.abs(z)),d=.3989423*Math.exp(-z*z/2);let p=d*t*(.3193815+t*(-.3565638+t*(1.781478+t*(-1.821256+t*1.330274))));return z>0?1-p:p}
+function drawAb(){const na=+$("#abNa").value,xa=+$("#abXa").value,nb=+$("#abNb").value,xb=+$("#abXb").value;
+  if(na<=0||nb<=0||xa>na||xb>nb){$("#abOut").textContent="Check the inputs: conversions can't exceed visitors.";return}
+  const pa=xa/na,pb=xb/nb,p=(xa+xb)/(na+nb),se=Math.sqrt(p*(1-p)*(1/na+1/nb)),z=se?(pb-pa)/se:0,pv=2*(1-normCdf(Math.abs(z))),up=pa?(pb-pa)/pa*100:0;
+  const sig=pv<.05;$("#abOut").innerHTML=`A: <b>${(pa*100).toFixed(2)}%</b> · B: <b>${(pb*100).toFixed(2)}%</b> · Uplift <b>${up>=0?"+":""}${up.toFixed(1)}%</b><br>z = ${z.toFixed(2)} · p = ${pv<.001?"<0.001":pv.toFixed(3)}<br><b style="color:${sig?"var(--ok)":"var(--warn)"}">${sig?"✓ Significant at 95% — ship B with confidence.":"✗ Not significant yet — keep the test running."}</b>`}
+["#abNa","#abXa","#abNb","#abXb"].forEach(s=>$(s).addEventListener("input",drawAb));drawAb();
+
+const QUERIES=[
+ "SELECT name, dept, on_hand\nFROM products\nWHERE on_hand = 0 AND hide_when_oos = 0;",
+ "SELECT name, gtin_pim, gtin_site\nFROM products\nWHERE gtin_pim <> gtin_site;",
+ "SELECT dept,\n  SUM(image_ok = 0) AS missing_images,\n  SUM(gtin_pim <> gtin_site) AS barcode_issues,\n  SUM(on_hand = 0 AND hide_when_oos = 0) AS visible_oos\nFROM products\nGROUP BY dept\nORDER BY dept;"];
+let db=null;
+$("#sqlIn").value=QUERIES[0];
+$$("#labSql [data-q]").forEach(b=>b.onclick=()=>{$("#sqlIn").value=QUERIES[+b.dataset.q];runSql()});
+function runSql(){
+  if(!db){$("#sqlStatus").textContent="Database still loading (needs internet).";return}
+  try{const res=db.exec($("#sqlIn").value);
+    if(!res.length){$("#sqlOut").innerHTML="<tr><td>No rows returned.</td></tr>";$("#sqlStatus").textContent="Done";return}
+    const {columns,values}=res[res.length-1];
+    $("#sqlOut").innerHTML="<tr>"+columns.map(c=>`<th>${c}</th>`).join("")+"</tr>"+values.map(r=>"<tr>"+r.map(v=>`<td>${v}</td>`).join("")+"</tr>").join("");
+    $("#sqlStatus").textContent=values.length+" row(s)";
+  }catch(e){$("#sqlOut").innerHTML=`<tr><td style="color:var(--warn)">${e.message}</td></tr>`;$("#sqlStatus").textContent="Error"}
+}
+$("#sqlRun").onclick=runSql;
+$("#sqlIn").addEventListener("keydown",e=>{if((e.ctrlKey||e.metaKey)&&e.key==="Enter"){e.preventDefault();runSql()}});
+(function loadSql(){const s=document.createElement("script");s.src="https://cdnjs.cloudflare.com/ajax/libs/sql.js/1.8.0/sql-wasm.js";
+  s.onload=()=>initSqlJs({locateFile:f=>"https://cdnjs.cloudflare.com/ajax/libs/sql.js/1.8.0/"+f}).then(SQL=>{db=new SQL.Database();
+    db.run(`CREATE TABLE products(item_id INT,name TEXT,dept TEXT,gtin_pim TEXT,gtin_site TEXT,on_hand INT,hide_when_oos INT,image_ok INT);
+    INSERT INTO products VALUES
+    (1001,'Basmati Rice 4kg','Global Foods','0062823511','0062823511',42,1,1),
+    (1002,'Coffee Pods 30ct','Dry Grocery','0063209112','0063209097',120,1,1),
+    (1003,'White Bread 675g','Bakery','0068721003','0068721003',15,1,0),
+    (1004,'Greek Yogurt 750g','Dairy','0005557712','0005557712',0,0,1),
+    (1005,'Frozen Pizza','Frozen','0071641172','0071641172',33,1,1),
+    (1006,'Halloween Candy Mix','Candy','0066343188','0066343188',0,0,0),
+    (1007,'Oat Cereal 500g','Dry Grocery','0063816074','0063816074',58,1,1),
+    (1008,'Mango Juice 1L','Global Foods','0062773528','0062773599',9,1,1),
+    (1009,'Cheddar Cheese 400g','Dairy','0006820011','0006820011',0,1,1),
+    (1010,'Ice Cream 1.5L','Frozen','0005900432','0005900432',0,0,1);`);
+    $("#sqlStatus").textContent="Ready — 10 sample products loaded";runSql()}).catch(()=>{$("#sqlStatus").textContent="Couldn't load the database."});
+  s.onerror=()=>{$("#sqlStatus").textContent="Couldn't load the database (offline?)."};document.head.appendChild(s)})();
+
+const STEPS=[
+ {sel:"#hero",t:"Hi, I'm Promita 👋",d:"A Product Analyst who bridges business needs, data and engineering. Here's a 60-second tour."},
+ {sel:"#stats",t:"Impact at a glance",d:"6+ years, 160K+ catalog items owned, 20+ launches and ~$1.2M in sales protected."},
+ {sel:"#experience",t:"Experience",d:"Filter by product & business analysis, catalog & eCommerce operations, or education."},
+ {sel:"#work",t:"Case studies",d:"Real problems, told as problem → approach → result."},
+ {sel:"#lab",t:"Product lab",d:"Interactive demos: a catalog audit, RICE prioritization, a live SQL database and an A/B test checker."},
+ {sel:"#skills",t:"Skills",d:"Product analysis, data, PIM/eCommerce platforms and stakeholder leadership."},
+ {sel:"#contact",t:"Let's connect",d:"Send a message, copy my details, or open the printable resume."}];
+let ti=-1;
+function showStep(){const s=STEPS[ti],el=$(s.sel);el.scrollIntoView({behavior:"smooth",block:"start"});
+  setTimeout(()=>{const r=el.getBoundingClientRect(),spot=$("#tourSpot"),tip=$("#tourTip");const h=Math.min(r.height,innerHeight-120);
+    Object.assign(spot.style,{display:"block",top:Math.max(r.top,70)-6+"px",left:Math.max(r.left,8)-6+"px",width:Math.min(r.width,innerWidth-16)+12+"px",height:h+12+"px"});
+    $("#tourTitle").textContent=s.t;$("#tourText").textContent=s.d;$("#tourStep").textContent=(ti+1)+" / "+STEPS.length;
+    $("#tourPrev").disabled=ti===0;$("#tourNext").textContent=ti===STEPS.length-1?"Finish":"Next";
+    tip.style.display="block";tip.style.left="16px";tip.style.top="auto";tip.style.bottom="84px";},450)}
+function startTour(e){if(e)e.preventDefault();$("#mobileMenu").classList.remove("open");ti=0;showStep()}
+function endTour(){ti=-1;$("#tourSpot").style.display="none";$("#tourTip").style.display="none"}
+["#tourBtn","#tourBtn2","#tourBtnM"].forEach(s=>$(s).addEventListener("click",startTour));
+$("#tourNext").onclick=()=>{if(ti>=STEPS.length-1)return endTour();ti++;showStep()};
+$("#tourPrev").onclick=()=>{if(ti>0){ti--;showStep()}};
+$("#tourClose").onclick=endTour;
+
+const KB=[
+ {k:["experience","work","job","career","background"],a:"6+ years across retail eCommerce, telecom and SaaS: Product Information Analyst at Walmart Canada (now), Shopify, Sutherland, plus product and BA roles at Robi Axiata, BRAC Aarong and BRAC Mayalogy in Bangladesh."},
+ {k:["walmart","current","now","catalog","pim"],a:"At Walmart Canada she owns catalog health for ~160,000 Grocery items, leads root-cause analysis across systems, and protected ~$1.2M in recurring sales by fixing a 2-year-old offer defect."},
+ {k:["skill","sql","tool","tableau","excel","stack"],a:"Requirements, user stories, UAT and root-cause analysis; SQL, Excel, Tableau, Power BI; Stibo STEP, Magento, Shopify; JIRA, ServiceNow, Confluence, Salesforce."},
+ {k:["product","owner","po","requirement","uat","launch","ba","business analyst"],a:"At Robi Axiata she owned requirements and UAT for 20+ product launches and led a product revamp that lifted revenue 9%. She's targeting Product Analyst, Business Analyst and Product Owner roles."},
+ {k:["project","case","example","achievement"],a:"Highlights: a ~$1.2M offer-defect fix, a 5-system store-picking investigation, a 23,000-item Black Friday audit, an AI grouping audit, and +9% / +12% product wins earlier. See the Case Studies section."},
+ {k:["award","recognition","leader","leadership","team","stakeholder"],a:"She received Walmart Canada's Above & Beyond Baton Award within 4 months, partners with 30 merchants and 50+ stakeholders, hosts team feedback sessions and a Learn Series, and has mentored 10 new hires."},
+ {k:["education","degree","study","master","university"],a:"Master of Management in Logistics & Supply Chain from the University of Windsor (Dean's Award), and a BBA in Marketing from Jahangirnagar University."},
+ {k:["cert","certificate","course"],a:"Google Data Analytics Certificate; DataCamp SQL and Power BI; LinkedIn Learning Agile Fundamentals and Project Management."},
+ {k:["location","where","based","remote","relocate","ontario","toronto"],a:"She's based in Ontario, Canada, and open to hybrid roles in the Greater Toronto Area."},
+ {k:["contact","email","reach","hire","linkedin"],a:"Email promitapew@gmail.com or connect at linkedin.com/in/promitapew. The 'Send a message' button in Contact opens a pre-filled email."}];
+const QUICK=["Experience","Skills","Product work","Projects","Award","Contact"];
+function addMsg(t,who){const m=document.createElement("div");m.className="msg "+who;m.textContent=t;$("#chatBody").appendChild(m);$("#chatBody").scrollTop=1e6}
+function answer(q){const s=q.toLowerCase();let best=null,score=0;KB.forEach(x=>{const n=x.k.filter(k=>s.includes(k)).length;if(n>score){score=n;best=x}});
+  return best?best.a:"I can answer questions about Promita's experience, skills, product work, projects, education, award, location or contact details."}
+$("#chatQuick").innerHTML=QUICK.map(q=>`<button class="btn small" type="button">${q}</button>`).join("");
+$$("#chatQuick button").forEach(b=>b.onclick=()=>{addMsg(b.textContent,"me");setTimeout(()=>addMsg(answer(b.textContent),"bot"),250)});
+$("#chatFab").onclick=()=>{const c=$("#chat");c.classList.toggle("open");if(!$("#chatBody").children.length)addMsg("Hi! I'm a simple résumé assistant (keyword-based, no AI, nothing stored). Ask me about Promita.","bot")};
+$("#chatClose").onclick=()=>$("#chat").classList.remove("open");
+$("#chatForm").onsubmit=e=>{e.preventDefault();const v=$("#chatIn").value.trim();if(!v)return;addMsg(v,"me");$("#chatIn").value="";setTimeout(()=>addMsg(answer(v),"bot"),250)};
+</script>
+</body>
+</html>
