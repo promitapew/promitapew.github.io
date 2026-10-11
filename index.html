@@ -118,6 +118,125 @@ header{position:sticky;top:0;z-index:60;padding:14px 0;background:linear-gradien
 .pass span{font-size:.78rem;opacity:.92}
 .visitors b{font-size:2.4rem;font-weight:800;color:var(--accent-2);letter-spacing:-.03em}
 
+
+/* home: mail-style experience + notes-style case studies */
+.mail{display:grid;grid-template-columns:180px 1fr 1.35fr;border:1px solid var(--line);border-radius:18px;overflow:hidden;min-height:400px}
+.mail-side{background:var(--tile-2);padding:12px 8px;border-right:1px solid var(--line)}
+.mail-side .lbl{font-size:.7rem;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.06em;padding:4px 10px 8px}
+.mfolder{display:flex;justify-content:space-between;width:100%;border:0;background:none;padding:8px 10px;border-radius:10px;cursor:pointer;font-size:.88rem;text-align:left}
+.mfolder.on{background:var(--soft);color:var(--accent);font-weight:600}
+.mfolder span{color:var(--muted);font-size:.78rem}
+.mail-list{border-right:1px solid var(--line);overflow-y:auto;max-height:480px}
+.mitem{display:block;width:100%;text-align:left;border:0;border-bottom:1px solid var(--line);background:none;padding:13px 15px;cursor:pointer}
+.mitem.on{background:var(--soft)}
+.mitem .top{display:flex;justify-content:space-between;gap:8px;font-weight:700;font-size:.88rem}
+.mitem .top span{font-weight:400;color:var(--muted);font-size:.76rem;white-space:nowrap}
+.mitem .subj{font-size:.86rem;margin:2px 0}
+.mitem .prev{font-size:.8rem;color:var(--muted);display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.mail-read{padding:20px 24px;overflow-y:auto;max-height:480px}
+.mail-read .from{color:var(--accent);font-weight:600}
+.mail-read h3{font-size:1.25rem;margin:2px 0}
+.mail-read .when{color:var(--muted);font-size:.84rem;margin-bottom:8px}
+.mail-read ul{padding-left:18px;margin:10px 0}
+.mail-read li{margin-bottom:6px}
+@media (max-width:860px){.mail{grid-template-columns:1fr}.mail-side{display:flex;overflow-x:auto;gap:4px;border-right:0;border-bottom:1px solid var(--line)}.mail-side .lbl{display:none}.mfolder{width:auto;white-space:nowrap;gap:8px}.mail-list{max-height:300px;border-right:0;border-bottom:1px solid var(--line)}.mail-read{max-height:none}}
+.cnotes{display:grid;grid-template-columns:270px 1fr;border:1px solid var(--line);border-radius:18px;overflow:hidden;min-height:380px}
+.clist{background:var(--tile-2);border-right:1px solid var(--line);overflow-y:auto;max-height:440px}
+.citem{display:block;width:100%;text-align:left;border:0;border-bottom:1px solid var(--line);background:none;padding:13px 16px;cursor:pointer}
+.citem.on{background:var(--soft-2)}
+.citem b{display:block;font-size:.92rem}
+.citem span{font-size:.8rem;color:var(--muted)}
+.cbody{padding:24px 28px}
+.cbody .metric{font-size:1.9rem;font-weight:800;color:var(--accent-2);letter-spacing:-.02em}
+.cbody h3{font-size:1.3rem;margin:4px 0 10px}
+.cbody dt{font-size:.74rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);margin-top:12px}
+.cbody dd{margin:3px 0 0}
+.fbar{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:12px}
+.fbtn{border:1px solid var(--line);background:none;color:var(--muted);padding:6px 13px;border-radius:999px;cursor:pointer;font-size:.82rem;font-weight:500}
+.fbtn.on{background:var(--ink);color:var(--tile);border-color:var(--ink)}
+@media (max-width:760px){.cnotes{grid-template-columns:1fr}.clist{max-height:260px;border-right:0;border-bottom:1px solid var(--line)}.cbody{padding:20px}}
+
+/* services */
+.svc-hero{display:grid;grid-template-columns:1.3fr 1fr;gap:28px;align-items:center;padding:40px;background:linear-gradient(135deg,var(--soft),var(--soft-2))}
+@media (max-width:860px){.svc-hero{grid-template-columns:1fr;padding:24px}}
+.browser{background:var(--tile);border-radius:18px;border:1px solid var(--line);overflow:hidden;box-shadow:0 20px 40px rgba(43,36,51,.12)}
+.bbar{display:flex;gap:6px;padding:10px 12px;background:var(--tile-2);border-bottom:1px solid var(--line);align-items:center}
+.bbar b{width:10px;height:10px;border-radius:50%;display:block}
+.url{margin-left:10px;font-size:.72rem;color:var(--muted);background:var(--tile);border-radius:6px;padding:2px 10px}
+.mini{padding:14px;display:grid;grid-template-columns:repeat(4,1fr);gap:8px}
+.mini i{display:block;border-radius:10px;height:46px;background:var(--tile-2)}
+.mini i.w2{grid-column:span 2;height:96px;background:linear-gradient(135deg,#e7b8d4,#b9acef)}.mini i.w4{grid-column:span 4;height:30px}.mini i.alt{height:46px;background:var(--soft-2)}
+.who .e{font-size:1.8rem}.who b{display:block;margin:6px 0 2px}.who span{color:var(--muted);font-size:.86rem}
+.founding{background:linear-gradient(135deg,#b56c9c,#9585d3);color:#fff;border:0;display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap}
+.pkg{display:flex;flex-direction:column;gap:6px;overflow:visible}
+.pkg.pop{border:2px solid var(--accent);box-shadow:0 16px 40px rgba(162,88,138,.18)}
+.ptag{position:absolute;top:-12px;left:24px;background:var(--accent);color:var(--on-accent);font-size:.72rem;font-weight:700;padding:4px 12px;border-radius:999px;letter-spacing:.04em}
+.price{font-size:2.2rem;font-weight:800;letter-spacing:-.03em;display:flex;align-items:baseline;gap:8px;flex-wrap:wrap}
+.price s{font-size:1.05rem;color:var(--muted);font-weight:500}
+.price small{font-size:.78rem;color:var(--muted);font-weight:500}
+.pkg .desc{color:var(--muted)}
+.pkg ul{list-style:none;padding:0;margin:6px 0 10px}.pkg li{padding:6px 0;border-bottom:1px solid var(--line);font-size:.88rem}.pkg li:before{content:"✓ ";color:var(--ok);font-weight:700}
+.addons{display:grid;grid-template-columns:repeat(5,1fr);gap:10px}
+@media (max-width:860px){.addons{grid-template-columns:1fr 1fr}}
+.add{background:var(--tile-2);border-radius:16px;padding:14px}.add b{display:block;font-size:.88rem}.add span{color:var(--accent);font-weight:700}
+.inc{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.inc div{display:flex;gap:10px;align-items:center;background:var(--tile);border:1px solid var(--line);border-radius:14px;padding:12px 14px;font-size:.9rem}
+@media (max-width:760px){.inc{grid-template-columns:1fr}}
+.steps{display:grid;grid-template-columns:repeat(5,1fr);gap:12px}
+@media (max-width:860px){.steps{grid-template-columns:1fr 1fr}}
+.step{background:var(--tile);border:1px solid var(--line);border-radius:20px;padding:18px}
+.step .n{width:30px;height:30px;border-radius:50%;background:var(--accent);color:var(--on-accent);display:grid;place-items:center;font-weight:700;font-size:.85rem;margin-bottom:10px}
+.step b{display:block}.step span{color:var(--muted);font-size:.82rem}
+.tpl .tpl-prev{height:130px;border-radius:16px;display:grid;place-items:center}
+.tpl-win{width:72%;background:rgba(255,255,255,.85);border-radius:10px;padding:10px;display:grid;grid-template-columns:1fr 1fr;gap:6px}
+.tpl-win i{height:20px;border-radius:6px;background:rgba(162,88,138,.18)}.tpl-win i.w{grid-column:span 2;height:12px}
+.tpl p{color:var(--muted);font-size:.85rem;margin:6px 0 10px}
+.quote .qm{font-size:3rem;line-height:1;color:var(--accent);font-family:Georgia,serif}
+.quote p{font-size:1rem;margin:4px 0 10px}
+.quote b{display:block}.quote span{color:var(--muted);font-size:.84rem}
+.quote.empty{border-style:dashed;background:var(--tile-2);box-shadow:none}
+.why>div{display:flex;gap:12px;margin-bottom:12px}.why small{color:var(--muted);font-size:.86rem}
+.faq>div{border-bottom:1px solid var(--line);padding:12px 0}.faq>div:last-child{border-bottom:0}.faq b{display:block}.faq span{color:var(--muted);font-size:.88rem}
+.svc-cta{display:grid;grid-template-columns:1.2fr 1fr;gap:24px;align-items:center}
+@media (max-width:860px){.svc-cta{grid-template-columns:1fr}}
+.svc-form input,.svc-form textarea,.svc-form select{width:100%;margin-bottom:8px;font:inherit;font-size:.88rem;padding:9px 12px;border-radius:12px;border:1px solid var(--line);background:var(--tile-2);color:var(--ink)}
+
+/* off the clock */
+.offteaser{text-decoration:none;color:var(--ink);background:linear-gradient(135deg,var(--soft),var(--soft-2))}
+.offteaser:hover{border-color:var(--accent)}
+.ot-grid{display:grid;grid-template-columns:1fr auto;gap:24px;align-items:center}
+.ot-grid h3{font-size:1.5rem;font-weight:800}
+.ot-grid p{color:var(--muted);margin:6px 0 14px}
+.ot-icons{display:flex;gap:12px;flex-wrap:wrap}
+.ot-icons span{width:74px;height:74px;border-radius:20px;display:grid;place-items:center;font-size:1.8rem;color:#fff;position:relative;padding-bottom:14px}
+.ot-icons small{position:absolute;bottom:6px;font-size:.62rem;font-weight:600;color:#fff}
+@media (max-width:760px){.ot-grid{grid-template-columns:1fr}.ot-icons span{width:58px;height:58px;font-size:1.4rem}}
+.dishes{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.dish{background:var(--tile-2);border-radius:16px;padding:14px;display:flex;flex-direction:column;gap:2px}
+.dish .demo{font-size:2rem}
+.dish span:last-child{font-size:.8rem;color:var(--muted)}
+.np{display:flex;gap:14px;align-items:center;margin-bottom:10px}
+.np .art{width:72px;height:72px;border-radius:16px;background:linear-gradient(135deg,#e7a3c6,#a99be0);display:grid;place-items:center;color:#fff;font-size:2rem;flex:none}
+.prog{height:4px;border-radius:4px;background:var(--line);margin-top:8px;overflow:hidden}
+.prog i{display:block;height:100%;width:38%;background:var(--accent);border-radius:4px}
+.trk{display:flex;gap:12px;align-items:center;width:100%;text-align:left;border:0;background:none;padding:8px 6px;border-radius:12px;cursor:pointer}
+.trk.on{background:var(--soft)}
+.trk .n{width:18px;color:var(--muted);font-size:.82rem}
+.trk b{display:block;font-size:.88rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.trk small{color:var(--muted);font-size:.76rem}
+.trk .eq{color:var(--accent);font-size:.7rem;letter-spacing:-2px}
+.hobby-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:10px}
+.hobby{background:var(--tile-2);border-radius:16px;padding:16px;display:flex;flex-direction:column;gap:3px}
+.hobby .hemo{font-size:1.8rem}
+.hobby span:last-child{font-size:.8rem;color:var(--muted)}
+.pin-emoji{width:34px;height:34px;border-radius:50%;background:#fff;display:grid;place-items:center;font-size:1.1rem;box-shadow:0 3px 10px rgba(0,0,0,.25)}
+.cur-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
+@media (max-width:760px){.cur-grid{grid-template-columns:1fr 1fr}}
+.cur{display:flex;gap:10px;align-items:center;background:var(--tile-2);border-radius:16px;padding:12px 14px}
+.cur>span{font-size:1.5rem}
+.cur small{display:block;color:var(--muted);font-size:.72rem;text-transform:uppercase;letter-spacing:.06em;font-weight:600}
+.cur b{font-size:.86rem;font-weight:600}
+
 /* notes (about) */
 .window{background:var(--tile);border:1px solid var(--line);border-radius:var(--r);box-shadow:var(--shadow);overflow:hidden}
 .titlebar{display:flex;align-items:center;gap:16px;padding:14px 18px;border-bottom:1px solid var(--line);background:var(--tile-2)}
@@ -227,6 +346,7 @@ textarea.code{font-family:ui-monospace,Menlo,monospace;min-height:88px}
 @media (max-width:760px){.contact-card{grid-template-columns:auto 1fr}.cbtns{grid-column:1/-1;justify-content:flex-start}}
 footer{text-align:center;color:var(--muted);font-size:.84rem;padding:10px 0 90px}
 
+
 /* overlays */
 .overlay{position:fixed;inset:0;background:rgba(30,22,36,.45);z-index:100;display:none;align-items:flex-start;justify-content:center;padding:40px 12px;overflow-y:auto;backdrop-filter:blur(3px)}
 .overlay.open{display:flex}
@@ -287,6 +407,8 @@ footer{text-align:center;color:var(--muted);font-size:.84rem;padding:10px 0 90px
       <a href="#/experience" data-p="experience">Experience</a>
       <a href="#/projects" data-p="projects">Projects</a>
       <a href="#/work" data-p="work">Case studies</a>
+      <a href="#/services" data-p="services">Services</a>
+      <a href="#/offclock" data-p="offclock">Off the Clock</a>
     </nav>
     <div class="right">
       <button class="round" id="searchBtn" title="Search (Ctrl/⌘ K)" aria-label="Search">⌕</button>
@@ -303,7 +425,7 @@ footer{text-align:center;color:var(--muted);font-size:.84rem;padding:10px 0 90px
     <div class="tile s8 hero" id="hero">
       <div class="avatar" data-avatar>PP</div>
       <div>
-        <span class="status"><span class="dot"></span>Open to opportunities · Ontario, Canada</span>
+        <span class="status"><span class="dot"></span>Happily building at Walmart Canada · Open to interesting conversations</span>
         <h1>Promita is a <em>Product Analyst</em> who makes product data work.</h1>
         <p>6+ years across retail eCommerce, telecom and SaaS. I turn business needs into requirements, user stories and UAT plans, and trace tricky product and catalog issues to their root cause.</p>
         <div style="display:flex;flex-wrap:wrap;gap:8px">
@@ -314,12 +436,12 @@ footer{text-align:center;color:var(--muted);font-size:.84rem;padding:10px 0 90px
       </div>
     </div>
     <div class="tile s4" id="opento">
-      <div class="app"><span class="ico c4">✓</span>Open to roles</div>
-      <div class="row">Product Analyst <span class="ok">Yes</span></div>
-      <div class="row">Business Analyst <span class="ok">Yes</span></div>
-      <div class="row">Product Owner <span class="ok">Yes</span></div>
-      <div class="row">Location <span class="maybe">GTA · Hybrid</span></div>
-      <button class="btn primary" data-chat style="margin-top:14px;width:100%;justify-content:center">Chat with me →</button>
+      <div class="app"><span class="ico c4">☺</span>Let's talk</div>
+      <div class="row">Product &amp; data conversations <span class="ok">Always</span></div>
+      <div class="row">Mentoring newcomers <span class="ok">Happy to</span></div>
+      <div class="row">Interesting opportunities <span class="maybe">Open to chat</span></div>
+      <div class="row">Portfolio websites <span class="ok"><a href="#/services" style="color:inherit;text-decoration:none">Booking →</a></span></div>
+      <button class="btn primary" data-chat style="margin-top:14px;width:100%;justify-content:center">Say hello →</button>
     </div>
 
     <div class="tile s3 stat" id="stats"><b data-count="6" data-suffix="+">0</b><span>years in product &amp; eCommerce</span></div>
@@ -327,24 +449,31 @@ footer{text-align:center;color:var(--muted);font-size:.84rem;padding:10px 0 90px
     <div class="tile s3 stat"><b data-count="20" data-suffix="+">0</b><span>product launches through UAT</span></div>
     <div class="tile s3 stat"><b data-count="1.2" data-prefix="$" data-suffix="M" data-dec="1">0</b><span>recurring sales protected</span></div>
 
-    <div class="tile s6 photos" id="photos" aria-label="Photos">
-      <div class="ph-dots" id="phDots"></div>
-      <div class="ph-app">🌸</div>
-      <div id="slides"></div>
-      <div class="ph-cap" id="phCap"></div>
+    <div class="tile s12" id="homeExp">
+      <div class="app"><span class="ico c3">✉</span>Experience<span style="margin-left:auto" class="dots"><b class="r"></b><b class="y"></b><b class="g"></b></span></div>
+      <div class="mail"><div class="mail-side" id="mSide"></div><div class="mail-list" id="mList"></div><div class="mail-read" id="mRead"></div></div>
     </div>
-    <div class="tile s6 mapbox">
-      <div id="map"><div class="map-fallback">Loading map…</div></div>
-      <div class="map-card"><div class="av">PP</div><div><b>Promita Pew</b><br><span style="color:var(--muted)">Greater Toronto Area · Probably tracing a root cause</span></div></div>
+    <div class="tile s12" id="homeCases">
+      <div class="app"><span class="ico c5">✎</span>Case studies</div>
+      <div class="fbar" id="cFilters"></div>
+      <div class="cnotes"><div class="clist" id="cList"></div><div class="cbody" id="cBody"></div></div>
     </div>
+
+    <a class="tile s12 offteaser" href="#/offclock" id="offTeaser">
+      <div class="app"><span class="ico c5">☕</span>Off the Clock</div>
+      <div class="ot-grid">
+        <div><h3>The bits that don't fit on a resume.</h3><p>Travels, recipes, music and hobbies — plus a photo booth if you're feeling brave.</p><span class="btn primary">Take a look →</span></div>
+        <div class="ot-icons"><span class="c3">🗺️<small>Travels</small></span><span class="c5">🍲<small>Recipes</small></span><span class="c2">🎧<small>Music</small></span><span class="c4">🥾<small>Hobbies</small></span><span class="c6">📸<small>Booth</small></span></div>
+      </div>
+    </a>
 
     <div class="tile s5">
       <div class="app"><span class="ico c2">💬</span>Messages</div>
       <div class="msgs">
         <div class="bub in">Hi! I'm Promita's assistant 👋</div>
         <div class="bub in">Ask me about her experience, skills or projects — or leave her a message.</div>
-        <div class="bub out">What roles is she open to?</div>
-        <div class="bub in">Product Analyst, BA and Product Owner roles in the GTA.</div>
+        <div class="bub out">Is she open to new opportunities?</div>
+        <div class="bub in">She loves her current role and team — but she's always happy to chat about interesting ideas.</div>
       </div>
       <button class="btn primary" data-chat style="margin-top:10px">Start chatting →</button>
     </div>
@@ -364,12 +493,7 @@ footer{text-align:center;color:var(--muted);font-size:.84rem;padding:10px 0 90px
       <div style="color:var(--muted);font-size:.85rem">people have stopped by. Thanks for being one of them!</div>
     </div>
 
-    <div class="tile s4 booth">
-      <div class="app" style="align-self:flex-start;margin:0"><span class="ico c6">📷</span>Photo Booth</div>
-      <div class="big-ico">📸</div>
-      <button class="btn" id="boothBtn">📷 Go on, take a selfie</button>
-    </div>
-    <div class="tile s4" id="credentials">
+    <div class="tile s6" id="credentials">
       <div class="app"><span class="ico c5">★</span>Wallet</div>
       <div class="wallet">
         <div class="pass c1"><b>🏆 Above &amp; Beyond Baton Award</b><span>Walmart Canada · within 4 months</span></div>
@@ -377,7 +501,7 @@ footer{text-align:center;color:var(--muted);font-size:.84rem;padding:10px 0 90px
         <div class="pass c3"><b>📜 Google Data Analytics</b><span>+ DataCamp SQL &amp; Power BI · Agile</span></div>
       </div>
     </div>
-    <div class="tile s4" id="skills">
+    <div class="tile s6" id="skills">
       <div class="app"><span class="ico c1">◆</span>Skills</div>
       <span class="chip">Requirements</span><span class="chip">User stories</span><span class="chip">UAT</span><span class="chip">Root-cause analysis</span><span class="chip">SQL</span><span class="chip">Excel</span><span class="chip">Tableau</span><span class="chip">Power BI</span><span class="chip">Stibo STEP</span><span class="chip">Magento</span><span class="chip">Shopify</span><span class="chip">JIRA</span><span class="chip">ServiceNow</span><span class="chip">Salesforce</span><span class="chip">Stakeholder management</span><span class="chip">Mentoring</span>
     </div>
@@ -475,6 +599,136 @@ footer{text-align:center;color:var(--muted);font-size:.84rem;padding:10px 0 90px
   </div>
 </section>
 
+<!-- SERVICES -->
+<section class="page hidden" data-page="services">
+  <div class="tile svc-hero" id="svcHero">
+    <div>
+      <span class="status"><span class="dot"></span>Now booking founding clients all over the world 🌍</span>
+      <h1 class="big" style="margin-top:14px">Portfolio websites that get you noticed.</h1>
+      <p class="lead">Personal websites for professionals, career changers and newcomers — planned like a product, designed for you, and launched with free hosting you own.</p>
+      <div style="display:flex;gap:10px;margin-top:16px;flex-wrap:wrap"><button class="btn primary" data-book>📅 Book a free 15-min call →</button><a class="btn" href="#svcPackages" data-scroll>See packages</a></div>
+    </div>
+    <div>
+      <div class="browser"><div class="bbar"><b style="background:#ff5f57"></b><b style="background:#febc2e"></b><b style="background:#28c840"></b><span class="url">yourname.github.io</span></div>
+        <div class="mini"><i class="w2"></i><i></i><i></i><i></i><i></i><i class="w4"></i><i></i><i></i><i class="w2 alt"></i></div></div>
+      <p style="text-align:center;font-size:.82rem;color:var(--muted);margin:10px 0 0">✨ You're looking at one — this site is my own work.</p>
+    </div>
+  </div>
+
+  <div class="section-h"><div><div class="eyebrow">Who it's for</div><h2>Built for people with a story to tell</h2></div></div>
+  <div class="bento" style="margin-top:14px">
+    <div class="tile s3 who"><div class="e">🎯</div><b>Job seekers &amp; career changers</b><span>Stand out beyond the PDF resume.</span></div>
+    <div class="tile s3 who"><div class="e">🌍</div><b>Newcomers &amp; global talent</b><span>A professional profile that travels with you.</span></div>
+    <div class="tile s3 who"><div class="e">📊</div><b>Analysts, PMs &amp; consultants</b><span>Show case studies, not just job titles.</span></div>
+    <div class="tile s3 who"><div class="e">🛍️</div><b>Freelancers &amp; small brands</b><span>A simple, credible home online.</span></div>
+  </div>
+
+  <div class="section-h" id="svcPackages"><div><div class="eyebrow">Packages</div><h2>Simple, transparent pricing</h2><p style="color:var(--muted);margin:0">Prices in CAD · clients worldwide welcome · 50% to start, 50% at launch.</p></div></div>
+  <div class="tile founding" style="margin-top:14px"><div><b style="font-size:1.15rem">🌱 Founding client offer — 50% off</b><br><span style="opacity:.92">For my first 5 clients, in exchange for an honest testimonial and permission to showcase your site.</span></div><button class="btn" data-book style="background:#fff;border:0;color:var(--accent);font-weight:600">Claim a spot →</button></div>
+  <div class="bento" style="margin-top:18px">
+    <div class="tile s4 pkg"><div class="eyebrow">Starter</div><div class="price"><s>C$299</s>C$149 <small>founding price</small></div><span class="desc">A polished 1–2 page online resume.</span>
+      <ul><li>1–2 pages, mobile-ready</li><li>About, experience &amp; skills</li><li>Contact &amp; LinkedIn links</li><li>Free GitHub Pages hosting</li></ul>
+      <div><span class="chip">~1 week</span><span class="chip">1 revision round</span></div><button class="btn" data-book style="margin-top:12px;justify-content:center">Choose Starter</button></div>
+    <div class="tile s4 pkg pop"><span class="ptag">MOST POPULAR</span><div class="eyebrow">Professional</div><div class="price"><s>C$699</s>C$349 <small>founding price</small></div><span class="desc">A full portfolio for most professionals.</span>
+      <ul><li>Everything in Starter</li><li>Multi-section site + case studies</li><li>Resume viewer &amp; PDF download</li><li>Visitor analytics &amp; basic SEO</li></ul>
+      <div><span class="chip">~2 weeks</span><span class="chip">2 revision rounds</span></div><button class="btn primary" data-book style="margin-top:12px;justify-content:center">Choose Professional</button></div>
+    <div class="tile s4 pkg"><div class="eyebrow">Signature</div><div class="price"><s>C$1,299</s><small>from</small> C$649 <small>founding price</small></div><span class="desc">A standout, interactive experience.</span>
+      <ul><li>Everything in Professional</li><li>Custom features: chat assistant, timeline, live GitHub projects</li><li>Dark mode &amp; custom design</li><li>Launch support &amp; walkthrough</li></ul>
+      <div><span class="chip">~3–4 weeks</span><span class="chip">3 revision rounds</span></div><button class="btn" data-book style="margin-top:12px;justify-content:center">Choose Signature</button></div>
+  </div>
+  <div class="tile" style="margin-top:18px"><div class="eyebrow" style="margin-bottom:10px">Add-ons</div>
+    <div class="addons"><div class="add"><b>Resume rewrite</b><span>C$99</span></div><div class="add"><b>LinkedIn polish</b><span>C$79</span></div><div class="add"><b>Custom domain setup</b><span>C$39</span></div><div class="add"><b>Extra revision round</b><span>C$39</span></div><div class="add"><b>Care plan · small edits</b><span>C$15/mo</span></div></div></div>
+
+  <div class="section-h"><div><div class="eyebrow">Templates</div><h2>Pick a starting style</h2><p style="color:var(--muted);margin:0">Every site is customised to you — these are starting points. Click to see a live demo.</p></div></div>
+  <div class="bento" style="margin-top:14px" id="templates"></div>
+
+  <div class="section-h"><div><div class="eyebrow">Every site includes</div><h2>No hidden fees, no lock-in</h2></div></div>
+  <div class="inc" style="margin-top:14px"><div>📱 Mobile-friendly design</div><div>🆓 Free hosting on GitHub Pages</div><div>🔑 You own every file</div><div>🔍 Basic SEO setup</div><div>📈 Privacy-friendly visitor analytics</div><div>🌐 Custom domain help (≈C$15–25/yr)</div></div>
+
+  <div class="section-h"><div><div class="eyebrow">How it works</div><h2>Run like a product launch</h2><p style="color:var(--muted);margin:0">The same requirements → build → test process I use as a Product Analyst.</p></div></div>
+  <div class="steps" style="margin-top:14px">
+    <div class="step"><div class="n">1</div><b>Discovery call</b><span>15 minutes on Google Meet about your goals.</span></div>
+    <div class="step"><div class="n">2</div><b>Content &amp; requirements</b><span>We shape your story, sections and features.</span></div>
+    <div class="step"><div class="n">3</div><b>Design preview</b><span>You see the look before anything is built.</span></div>
+    <div class="step"><div class="n">4</div><b>Build &amp; test</b><span>Checked on phones, tablets and laptops.</span></div>
+    <div class="step"><div class="n">5</div><b>Launch &amp; handover</b><span>Live site, your accounts, a quick how-to.</span></div>
+  </div>
+
+  <div class="section-h"><div><div class="eyebrow">Client testimonials</div><h2>Kind words</h2></div></div>
+  <div class="bento" style="margin-top:14px" id="testimonials"></div>
+
+  <div class="bento" style="margin-top:46px">
+    <div class="tile s6 why"><div class="eyebrow" style="margin-bottom:12px">Why work with me</div>
+      <div><span class="ico c1">✦</span><span><b>Product thinking</b><br><small>Clear requirements and a site built around what recruiters and clients look for.</small></span></div>
+      <div><span class="ico c2">✎</span><span><b>Content help included</b><br><small>I help turn your experience into crisp, results-focused copy.</small></span></div>
+      <div><span class="ico c3">⚙</span><span><b>Tested, not rushed</b><br><small>Every page goes through a UAT-style check before launch.</small></span></div>
+      <div><span class="ico c4">💬</span><span><b>Clear communication</b><br><small>Fixed scope, clear timelines, no surprises — in any time zone.</small></span></div></div>
+    <div class="tile s6 faq"><div class="eyebrow" style="margin-bottom:6px">FAQ</div>
+      <div><b>Do you work with clients outside Canada?</b><span>Yes — everything happens online, and I'll find a call time that suits your time zone.</span></div>
+      <div><b>Are there ongoing costs?</b><span>Hosting is free. A custom domain is optional (about C$15–25 a year).</span></div>
+      <div><b>What do I need to provide?</b><span>Your resume, a photo and any work samples. I'll guide the rest.</span></div>
+      <div><b>Who owns the website?</b><span>You do — it lives in your own GitHub account.</span></div>
+      <div><b>How long does it take?</b><span>1–4 weeks, depending on the package and how quickly content is ready.</span></div></div>
+  </div>
+
+  <div class="tile svc-cta" style="margin-top:46px">
+    <div><div class="eyebrow">Let's build yours</div><h2 style="font-size:2rem;margin:4px 0 8px">Ready to stand out online?</h2><p style="color:var(--muted)">Book a free 15-minute Google Meet call, or send a quick note and I'll reply within 2 business days.</p>
+      <div style="display:flex;gap:8px;flex-wrap:wrap"><button class="btn primary" data-book>📅 Book a free call →</button><a class="btn" id="svcMail" href="#">✉ Email me</a></div></div>
+    <form class="svc-form" id="svcForm">
+      <input type="text" id="sfName" placeholder="Your name" required>
+      <input type="email" id="sfEmail" placeholder="Email" required>
+      <select id="sfPkg"><option>Package I'm interested in</option><option>Starter</option><option>Professional</option><option>Signature</option><option>Not sure yet</option></select>
+      <textarea id="sfMsg" rows="3" placeholder="Tell me about your goals"></textarea>
+      <button class="btn primary" style="width:100%;justify-content:center">Send request</button>
+    </form>
+  </div>
+</section>
+
+<!-- OFF THE CLOCK -->
+<section class="page hidden" data-page="offclock">
+  <div class="eyebrow">Travels, recipes, music and hobbies</div>
+  <h1 class="big">Off the Clock</h1>
+  <p class="lead">The bits of me that don't fit on a resume.</p>
+  <div class="bento" style="margin-top:22px">
+    <div class="tile s6 photos" id="photos" aria-label="Photos">
+      <div class="ph-dots" id="phDots"></div>
+      <div class="ph-app">🌸</div>
+      <div id="slides"></div>
+      <div class="ph-cap" id="phCap"></div>
+    </div>
+    <div class="tile s6 mapbox" id="travelMap">
+      <div id="map"><div class="map-fallback">Loading map…</div></div>
+      <div class="map-card"><div class="av">PP</div><div><b>Travel map</b><br><span style="color:var(--muted)"><span id="mapNote">Places I've wandered</span></span></div></div>
+    </div>
+
+
+    <div class="tile s6" id="recipes">
+      <div class="app"><span class="ico c5">🍲</span>Recipes<span style="margin-left:auto;font-weight:500">From my kitchen</span></div>
+      <div class="dishes" id="dishList"></div>
+    </div>
+    <div class="tile s6" id="music">
+      <div class="app"><span class="ico c2">🎧</span>Music<span style="margin-left:auto;font-weight:500">On repeat</span></div>
+      <div class="np"><div class="art">♪</div><div style="flex:1;min-width:0"><div class="eyebrow" style="font-size:.68rem">Now playing</div><b id="npTitle"></b><div id="npArtist" style="color:var(--muted);font-size:.85rem"></div><div class="prog"><i></i></div></div></div>
+      <div id="trackList"></div>
+      <a class="btn sm" id="playlistBtn" target="_blank" rel="noopener" style="margin-top:10px">Open my playlist ↗</a>
+    </div>
+    <div class="tile s8" id="hobbies">
+      <div class="app"><span class="ico c4">🥾</span>Hobbies</div>
+      <div class="hobby-grid" id="hobbyList"></div>
+    </div>
+    <div class="tile s4 booth" id="boothTile">
+      <div class="app" style="align-self:flex-start;margin:0"><span class="ico c6">📷</span>Photo Booth</div>
+      <div class="big-ico">📸</div>
+      <button class="btn" id="boothBtn">📷 Go on, take a selfie</button>
+    </div>
+
+    <div class="tile s12" id="currently">
+      <div class="app"><span class="ico c1">✦</span>Currently</div>
+      <div class="cur-grid" id="curList"></div>
+    </div>
+  </div>
+</section>
+
 </main>
 <footer>© <span id="yr"></span> Promita Pew · Made in Ontario</footer>
 
@@ -537,6 +791,42 @@ const CONFIG = {
   goatcounter: "https://promitapew.goatcounter.com",
   photo: "photo.jpg",                 // upload photo.jpg to the repo to replace the "PP" initials
   formEndpoint: "",                   // optional: paste a free Formspree URL so chat messages reach your inbox directly
+  booking: "",                        // ✏️ paste your Google Calendar booking page or Calendly link here
+  testimonials: [                     // ✏️ add real client quotes here, e.g. {quote:"…", name:"Jane D.", role:"Data Analyst, Toronto"}
+  ],
+  offClock: {                         // ✏️ fill these in — placeholders show until you do
+    places: [                         // travel map pins (lat/lng: in Google Maps, right-click a place and copy the numbers)
+      {name:"Greater Toronto Area", lat:43.65, lng:-79.55, note:"Home base", home:true},
+      {name:"Windsor, Ontario", lat:42.3149, lng:-83.0364, note:"Where my Canadian chapter began", emoji:"🍁"},
+      {name:"Dhaka, Bangladesh", lat:23.8103, lng:90.4125, note:"Where it all started", emoji:"🌇"}
+    ],
+    dishes: [
+      {emoji:"🍛", name:"Signature dish", note:"Add a favourite dish you cook"},
+      {emoji:"🥘", name:"Comfort food", note:"The one friends always ask for"},
+      {emoji:"🍰", name:"Sweet treat", note:"A dessert or snack you love making"},
+      {emoji:"🫖", name:"Go-to drink", note:"Chai, coffee… you tell us"}
+    ],
+    music: [
+      {title:"Add a favourite song", artist:"Artist name"},
+      {title:"Another song on repeat", artist:"Artist name"},
+      {title:"A song that reminds me of home", artist:"Artist name"},
+      {title:"Focus-mode track", artist:"Artist name"}
+    ],
+    playlist: "",                    // paste a Spotify / YouTube Music playlist link to show the button
+    hobbies: [
+      {emoji:"🥾", name:"Trekking", note:"Trails I've done and want to do"},
+      {emoji:"✈️", name:"Travel", note:"Next destination on the list"},
+      {emoji:"🍳", name:"Cooking", note:"Experimenting in the kitchen"},
+      {emoji:"🎶", name:"Music", note:"Listening, humming, playlists"},
+      {emoji:"➕", name:"Add a hobby", note:"Anything else that makes you, you"}
+    ],
+    currently: [
+      {emoji:"📚", label:"Learning", text:"Project management (PMP study group)"},
+      {emoji:"📖", label:"Reading", text:"Add a book you're reading"},
+      {emoji:"🎧", label:"Listening", text:"Add a podcast or album"},
+      {emoji:"🗺️", label:"Planning", text:"Add your next trip"}
+    ]
+  },
   photos: [                           // upload images to a /photos folder; missing files show a soft colour slide instead
     {src:"photos/1.jpg", cap:"📍 Windsor, Ontario", emoji:"🍁"},
     {src:"photos/2.jpg", cap:"📍 Toronto, Ontario", emoji:"🏙️"},
@@ -586,7 +876,7 @@ const NOTES = {
     {t:"Skills",s:"Requirements, data and people.",html:`<h2>Skills</h2><p><b>Product &amp; analysis:</b> requirements, BRDs, user stories, acceptance criteria, UAT, process mapping, root-cause analysis, Agile.</p><p><b>Data:</b> SQL, Excel, Tableau, Power BI, Looker, Google Analytics, Mixpanel.</p><p><b>Platforms:</b> Stibo STEP, Walmart GOI (Item360, Supplier One, iSAM), Magento, Shopify, JIRA, ServiceNow, Confluence, Salesforce.</p><p><b>People:</b> stakeholder management, cross-functional coordination, mentoring, facilitation.</p>`}
   ],
   "Quick Notes":[
-    {t:"What I'm looking for",s:"Product Analyst, BA or PO roles.",html:`<h2>What I'm looking for</h2><p>Product Analyst, Business Analyst and Product Owner roles in the Greater Toronto Area (hybrid), especially in eCommerce, retail tech and catalog or data-heavy products.</p><p><a href="#/home" onclick="openChat()">Say hi in the chat →</a></p>`},
+    {t:"Right now",s:"Happy where I am, open to a chat.",html:`<h2>Right now</h2><p>I love my current role and team at Walmart Canada, so I'm not actively looking. That said, I'm always happy to talk about interesting product, business analysis or data challenges — and I build portfolio websites on the side.</p><p><a href="#/services">See my website services →</a></p><p><a href="#/home" onclick="openChat()">Say hi in the chat →</a></p>`},
     {t:"Education",s:"Windsor · Jahangirnagar.",html:`<h2>Education</h2><p><b>Master of Management, Logistics &amp; Supply Chain</b> — University of Windsor, 2022–2023. Dean's Award; mentored international students; VP Marketing, MOM Society.</p><p><b>Bachelor of Business Administration, Marketing</b> — Jahangirnagar University, 2015–2018.</p><p><b>Learning:</b> Google Data Analytics Certificate · DataCamp SQL &amp; Power BI · LinkedIn Learning Agile Fundamentals &amp; Project Management.</p>`}
   ]
 };
@@ -660,13 +950,13 @@ function toggleTheme(){const n=isDark()?"light":"dark";store.set("theme",n);appl
 applyTheme(store.get("theme"));$("#themeBtn").onclick=toggleTheme;
 
 /* routing */
-const PAGES=["home","about","experience","projects","work"];
+const PAGES=["home","about","experience","projects","work","services","offclock"];
 let mapInit=false;
 function route(){
   let p=(location.hash.match(/^#\/(\w+)/)||[])[1]||"home"; if(!PAGES.includes(p))p="home";
   $$(".page").forEach(s=>s.classList.toggle("hidden",s.dataset.page!==p));
   $$("#pill a").forEach(a=>a.classList.toggle("on",a.dataset.p===p));
-  if(p==="home"&&!mapInit)initMap();
+  if(p==="offclock"){if(!mapInit)initMap();else if(window._map)setTimeout(()=>window._map.invalidateSize(),60)}
   if(p==="experience")drawTimeline();
   window.scrollTo({top:0});
   if(window.goatcounter&&window.goatcounter.count){try{window.goatcounter.count({path:"/"+p,title:p})}catch(e){}}
@@ -688,13 +978,43 @@ let ph=0;function showPh(i){ph=i;$$(".slide").forEach((s,k)=>s.classList.toggle(
 showPh(0);setInterval(()=>showPh((ph+1)%CONFIG.photos.length),4000);
 $("#photos").addEventListener("click",()=>showPh((ph+1)%CONFIG.photos.length));
 
+/* services */
+const TEMPLATES=[
+ {name:"Soft Bento",desc:"App-style tiles, timeline, chat and live projects — this site.",href:"#/home",grad:"linear-gradient(135deg,#e7b8d4,#b9acef)",tag:"Signature"},
+ {name:"Warm Bento",desc:"The same tile layout in warm, earthy tones.",href:"templates/warm-bento.html",grad:"linear-gradient(135deg,#e9c39b,#c98a63)",tag:"Professional"},
+ {name:"Classic Portfolio",desc:"A clean single page with case studies and an interactive lab.",href:"templates/classic.html",grad:"linear-gradient(135deg,#d9b3c9,#e7c3a3)",tag:"Professional"},
+ {name:"Minimal Resume",desc:"A simple, elegant 1–2 page online resume.",href:"",grad:"linear-gradient(135deg,#dfe5ee,#c9d3e3)",tag:"Starter"}];
+$("#templates").innerHTML=TEMPLATES.map(t=>`<div class="tile s3 tpl"><div class="tpl-prev" style="background:${t.grad}"><div class="tpl-win"><i></i><i></i><i class="w"></i></div></div><div style="display:flex;justify-content:space-between;align-items:center;margin-top:12px"><b>${t.name}</b><span class="chip">${t.tag}</span></div><p>${t.desc}</p>${t.href?`<a class="btn sm" href="${t.href}" ${t.href.startsWith("#")?"":'target="_blank" rel="noopener"'}>Live demo ↗</a>`:`<span class="btn sm" style="opacity:.6">Coming soon</span>`}</div>`).join("");
+function drawTestimonials(){const T=CONFIG.testimonials;
+  $("#testimonials").innerHTML=T.length?T.map(t=>`<div class="tile s4 quote"><div class="qm">“</div><p>${esc(t.quote)}</p><b>${esc(t.name)}</b><span>${esc(t.role||"")}</span></div>`).join("")
+   :[1,2,3].map(i=>`<div class="tile s4 quote empty"><div class="qm">“</div><p>${i===1?"Your story could be the first one here.":i===2?"Founding clients' reviews will appear here.":"Honest feedback only — no made-up quotes."}</p><span>${i===1?"Founding client spot · open":"Coming soon"}</span>${i===1?'<button class="btn sm primary" data-book style="margin-top:10px">Claim a spot →</button>':""}</div>`).join("")}
+drawTestimonials();
+function openBooking(){if(CONFIG.booking)window.open(CONFIG.booking,"_blank","noopener");else location.href=`mailto:${CONFIG.email}?subject=${encodeURIComponent("Booking a free 15-min website call")}&body=${encodeURIComponent("Hi Promita,\n\nI'd like to book a free 15-minute call about a portfolio website.\nMy time zone:\nTimes that work for me:\n\nThanks!")}`}
+document.addEventListener("click",e=>{if(e.target.closest("[data-book]")){e.preventDefault();openBooking()}const sc=e.target.closest("[data-scroll]");if(sc){e.preventDefault();$(sc.getAttribute("href")).scrollIntoView({behavior:"smooth"})}});
+$("#svcMail").href=`mailto:${CONFIG.email}?subject=${encodeURIComponent("Portfolio website enquiry")}`;
+$("#svcForm").onsubmit=async e=>{e.preventDefault();const d={name:$("#sfName").value,email:$("#sfEmail").value,package:$("#sfPkg").value,message:$("#sfMsg").value};
+  if(CONFIG.formEndpoint){try{const r=await fetch(CONFIG.formEndpoint,{method:"POST",headers:{"Content-Type":"application/json",Accept:"application/json"},body:JSON.stringify({...d,_subject:"Website enquiry"})});if(!r.ok)throw 0;toast("Thanks! I'll reply within 2 business days.");e.target.reset();return}catch(err){}}
+  location.href=`mailto:${CONFIG.email}?subject=${encodeURIComponent("Portfolio website enquiry — "+d.package)}&body=${encodeURIComponent(`Name: ${d.name}\nEmail: ${d.email}\nPackage: ${d.package}\n\n${d.message}`)}`};
+
+/* off the clock */
+(function(){const O=CONFIG.offClock;
+  $("#dishList").innerHTML=O.dishes.map(d=>`<div class="dish"><span class="demo">${d.emoji}</span><b>${esc(d.name)}</b><span>${esc(d.note)}</span></div>`).join("");
+  $("#npTitle").textContent=O.music[0].title;$("#npArtist").textContent=O.music[0].artist;
+  $("#trackList").innerHTML=O.music.map((t,i)=>`<button class="trk ${i===0?"on":""}" data-i="${i}"><span class="n">${i+1}</span><span style="flex:1;min-width:0"><b>${esc(t.title)}</b><small>${esc(t.artist)}</small></span><span class="eq">${i===0?"▮▮▮":""}</span></button>`).join("");
+  $$("#trackList .trk").forEach(b=>b.onclick=()=>{const t=O.music[+b.dataset.i];$("#npTitle").textContent=t.title;$("#npArtist").textContent=t.artist;$$("#trackList .trk").forEach(x=>{x.classList.remove("on");x.querySelector(".eq").textContent=""});b.classList.add("on");b.querySelector(".eq").textContent="▮▮▮"});
+  if(O.playlist)$("#playlistBtn").href=O.playlist;else $("#playlistBtn").classList.add("hidden");
+  $("#hobbyList").innerHTML=O.hobbies.map(h=>`<div class="hobby"><span class="hemo">${h.emoji}</span><b>${esc(h.name)}</b><span>${esc(h.note)}</span></div>`).join("");
+  $("#curList").innerHTML=O.currently.map(c=>`<div class="cur"><span>${c.emoji}</span><div><small>${esc(c.label)}</small><b>${esc(c.text)}</b></div></div>`).join("");})();
+
 /* map (Leaflet + OpenStreetMap) */
 function initMap(){mapInit=true;const s=document.createElement("script");s.src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js";
-  s.onload=()=>{$("#map").innerHTML="";const m=L.map("map",{scrollWheelZoom:false,attributionControl:true}).setView([43.65,-79.55],10);
+  s.onload=()=>{$("#map").innerHTML="";const m=L.map("map",{scrollWheelZoom:false}).setView([43.65,-79.55],4);window._map=m;
     L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",{maxZoom:18,attribution:"© OpenStreetMap"}).addTo(m);
-    const icon=L.divIcon({className:"",html:`<div class="pin-av">PP</div>`,iconSize:[44,44],iconAnchor:[22,22]});
-    L.circle([43.65,-79.55],{radius:6000,color:"#a2588a",weight:1,fillOpacity:.12}).addTo(m);L.marker([43.65,-79.55],{icon}).addTo(m);m.zoomControl.setPosition("bottomright")};
-  s.onerror=()=>{$("#map").innerHTML='<div class="map-fallback">📍 Greater Toronto Area</div>'};document.head.appendChild(s)}
+    const pts=[];CONFIG.offClock.places.forEach(pl=>{const icon=L.divIcon({className:"",html:pl.home?`<div class="pin-av">PP</div>`:`<div class="pin-emoji">${pl.emoji||"📍"}</div>`,iconSize:pl.home?[44,44]:[34,34],iconAnchor:pl.home?[22,22]:[17,17]});
+      L.marker([pl.lat,pl.lng],{icon}).addTo(m).bindPopup(`<b>${esc(pl.name)}</b>${pl.note?"<br>"+esc(pl.note):""}`);pts.push([pl.lat,pl.lng])});
+    if(pts.length>1)m.fitBounds(pts,{padding:[40,40]});m.zoomControl.setPosition("bottomright")};
+  s.onerror=()=>{$("#map").innerHTML='<div class="map-fallback">🗺️ Travel map</div>'};document.head.appendChild(s);
+  $("#mapNote").textContent=CONFIG.offClock.places.length+" places I've wandered · tap a pin"}
 
 /* visitors (GoatCounter) */
 (function(){const g=document.createElement("script");g.async=true;g.src="https://gc.zgo.at/count.js";g.dataset.goatcounter=CONFIG.goatcounter+"/count";g.dataset.goatcounterSettings='{"no_onload":true}';
@@ -753,6 +1073,29 @@ const sorted=CASES.map((c,i)=>({...c,i})).sort((a,b)=>b.y-a.y);
 let lastY="";$("#workList").innerHTML=sorted.map(c=>{const y=c.y!==lastY?c.y:"";lastY=c.y;return `<div class="lrow" data-case="${c.i}"><span class="yy">${y}</span><span class="t">${esc(c.title)}</span><span class="k">${esc(c.cat)}</span><span class="m">${c.min} min</span></div>`}).join("");
 function openCase(i){const c=CASES[i];$("#caseBody").innerHTML=`<button class="round x" data-close>✕</button><div class="eyebrow">${esc(c.cat)} · ${c.y}</div><div style="font-size:1.7rem;font-weight:800;color:var(--accent);margin-top:6px">${esc(c.metric)}</div><h2 style="font-size:1.5rem;margin:4px 0 10px">${esc(c.title)}</h2><dl><dt>Problem</dt><dd>${esc(c.problem)}</dd><dt>Approach</dt><dd>${esc(c.approach)}</dd><dt>Result</dt><dd>${esc(c.result)}</dd></dl><p style="color:var(--muted);font-size:.78rem;font-style:italic;margin-top:16px">Employer work — details generalized to protect confidential information.</p>`;openOv("#caseOv")}
 document.addEventListener("click",e=>{const t=e.target.closest("[data-case]");if(t)openCase(+t.dataset.case)});
+
+/* home: mail-style experience */
+const TAGS={"Walmart Canada":["Stibo STEP","SQL","UAT","Root-cause analysis"],"Shopify":["APIs","SQL","Defect triage","Mentoring"],"Sutherland Global (AT&T)":["Log analysis","SOPs"],"University of Windsor":["Supply chain","Mentoring"],"Robi Axiata":["BRDs","User stories","UAT","Pricing"],"BRAC Aarong":["Magento","Conversion","Catalog"],"BRAC Mayalogy (Maya Apa)":["Requirements","Mixpanel","UAT"]};
+const MF=[["all","All mail"],["product","Product & BA"],["data","Catalog & eCommerce"],["edu","Education"]];
+let mF="all",mS=0;
+function drawMail(){const all=[...EXP].reverse();const v=all.filter(e=>mF==="all"||e.cat===mF);if(mS>=v.length)mS=0;
+  $("#mSide").innerHTML='<div class="lbl">Mailboxes</div>'+MF.map(([k,n])=>`<button class="mfolder ${k===mF?"on":""}" data-k="${k}">${n}<span>${k==="all"?all.length:all.filter(e=>e.cat===k).length}</span></button>`).join("");
+  $("#mList").innerHTML=v.map((e,i)=>`<button class="mitem ${i===mS?"on":""}" data-i="${i}"><div class="top">${esc(e.org)}<span>${fmt(e.start)}</span></div><div class="subj">${esc(e.role)}</div><div class="prev">${esc(e.bullets[0])}</div></button>`).join("");
+  const e=v[mS];$("#mRead").innerHTML=`<div class="from">${esc(e.org)}</div><h3>${esc(e.role)}</h3><div class="when">${fmt(e.start)} – ${fmt(e.end)} · ${esc(e.place)}</div><ul>${e.bullets.map(b=>`<li>${esc(b)}</li>`).join("")}</ul><div>${(TAGS[e.org]||[]).map(t=>`<span class="chip">${esc(t)}</span>`).join("")}</div>`;
+  $$("#mSide .mfolder").forEach(b=>b.onclick=()=>{mF=b.dataset.k;mS=0;drawMail()});
+  $$("#mList .mitem").forEach(b=>b.onclick=()=>{mS=+b.dataset.i;drawMail();if(innerWidth<860)$("#mRead").scrollIntoView({behavior:"smooth",block:"nearest"})});}
+drawMail();
+
+/* home: notes-style case studies */
+const CF=[["all","All"],["Root-cause analysis","Root-cause analysis"],["Data audit","Data audits"],["Product delivery","Product delivery"],["Partnership","Partnerships"]];
+let cF="all",cS=0;
+function drawCaseNotes(){const v=CASES.filter(c=>cF==="all"||c.cat===cF);if(cS>=v.length)cS=0;
+  $("#cFilters").innerHTML=CF.map(([k,n])=>`<button class="fbtn ${k===cF?"on":""}" data-k="${k}">${n}</button>`).join("");
+  $("#cList").innerHTML=v.map((c,i)=>`<button class="citem ${i===cS?"on":""}" data-i="${i}"><b>${esc(c.title)}</b><span>${esc(c.metric)}</span></button>`).join("");
+  const c=v[cS];$("#cBody").innerHTML=`<div class="metric">${esc(c.metric)}</div><h3>${esc(c.title)}</h3><dl><dt>Problem</dt><dd>${esc(c.problem)}</dd><dt>Approach</dt><dd>${esc(c.approach)}</dd><dt>Result</dt><dd>${esc(c.result)}</dd></dl><div style="margin-top:12px"><span class="chip">${esc(c.cat)}</span><span class="chip">${c.y}</span></div><p style="color:var(--muted);font-size:.78rem;font-style:italic;margin:14px 0 0">Employer work — details generalized to protect confidential information.</p>`;
+  $$("#cFilters .fbtn").forEach(b=>b.onclick=()=>{cF=b.dataset.k;cS=0;drawCaseNotes()});
+  $$("#cList .citem").forEach(b=>b.onclick=()=>{cS=+b.dataset.i;drawCaseNotes();if(innerWidth<760)$("#cBody").scrollIntoView({behavior:"smooth",block:"nearest"})});}
+drawCaseNotes();
 
 /* overlays */
 function openOv(id){$(id).classList.add("open")}function closeOv(id){$(id).classList.remove("open");if(id==="#boothOv")stopBooth()}
@@ -820,7 +1163,7 @@ const KB=[
  {k:["experience","work","job","career","background","history"],a:"6+ years across retail eCommerce, telecom and SaaS: Product Information Analyst at Walmart Canada (now), Shopify and Sutherland in Canada, plus product and BA roles at Robi Axiata, BRAC Aarong and BRAC Mayalogy in Bangladesh."},
  {k:["walmart","current","now","catalog","pim","today"],a:"At Walmart Canada she owns catalog health for ~160,000 Grocery items, leads root-cause analysis across systems, and protected ~$1.2M in recurring sales by fixing a 2-year-old offer defect."},
  {k:["skill","sql","tool","tableau","excel","stack","power bi"],a:"Requirements, user stories, UAT and root-cause analysis; SQL, Excel, Tableau, Power BI; Stibo STEP, Magento, Shopify; JIRA, ServiceNow, Confluence, Salesforce."},
- {k:["product owner","po","requirement","uat","launch","business analyst","ba ","product analyst","roles","open to","looking"],a:"She's open to Product Analyst, Business Analyst and Product Owner roles in the GTA (hybrid). At Robi Axiata she owned requirements and UAT for 20+ launches and led a revamp that lifted revenue 9%."},
+ {k:["product owner","po","requirement","uat","launch","business analyst","ba ","product analyst","roles","open to","looking"],a:"She loves her current role and team at Walmart Canada, so she isn't actively looking — but she's always open to discussing interesting opportunities. At Robi Axiata she owned requirements and UAT for 20+ launches and led a revamp that lifted revenue 9%."},
  {k:["project","case","example","achievement","portfolio","github"],a:"Highlights: a ~$1.2M offer-defect fix, a 5-system store-picking investigation, a 23,000-item Black Friday audit, a 50-pack telecom portfolio revamp (+9% revenue), the Aarong USA site launch and free healthcare for ~8M garment workers. See Projects and Case studies."},
  {k:["award","recognition","leader","leadership","team","stakeholder","mentor"],a:"She received Walmart Canada's Above & Beyond Baton Award within 4 months, partners with 30 merchants and 50+ stakeholders, hosts team feedback sessions and a Learn Series, and has mentored 10 new hires."},
  {k:["education","degree","study","master","university","school","pmp"],a:"Master of Management in Logistics & Supply Chain from the University of Windsor (Dean's Award), and a BBA in Marketing from Jahangirnagar University. She's also studying project management with a PMP study community."},
@@ -828,8 +1171,9 @@ const KB=[
  {k:["location","where","based","remote","relocate","ontario","toronto","hybrid"],a:"She's based in Ontario, Canada, and open to hybrid roles in the Greater Toronto Area."},
  {k:["hobby","hobbies","interest","fun","free time","travel","cook"],a:"Trekking, travel, cooking and music — and swapping notes with other product people."},
  {k:["contact","email","reach","hire","linkedin","phone","talk","interview"],a:"Email promitapew@gmail.com or connect on LinkedIn (linkedin.com/in/promitapew). Or tap “Message Promita” below and I'll pass your note along."},
+ {k:["website","service","services","portfolio site","price","pricing","cost","package","build my","template"],a:"Promita builds portfolio websites for clients worldwide. Founding-client prices (50% off): Starter C$149, Professional C$349, Signature from C$649. You can book a free 15-minute call on the Services page."},
  {k:["hi","hello","hey"],a:"Hi! 👋 I can answer questions about Promita's experience, skills, projects and the roles she's open to — or pass a message to her."}];
-const QUICK=["Experience","Skills","Projects","Open roles","Education","✉ Message Promita"];
+const QUICK=["Experience","Skills","Projects","Website services","Education","✉ Message Promita"];
 const transcript=[];
 function addMsg(t,who){transcript.push((who==="me"?"Visitor: ":who==="bot"?"Assistant: ":"")+t);const m=document.createElement("div");m.className="msg "+who;m.textContent=t;$("#chatBody").appendChild(m);$("#chatBody").scrollTop=1e6}
 function answer(q){const s=" "+q.toLowerCase()+" ";let best=null,score=0;KB.forEach(x=>{const n=x.k.filter(k=>s.includes(k)).length;if(n>score){score=n;best=x}});
@@ -851,7 +1195,7 @@ $("#hoSend").onclick=async()=>{const name=$("#hoName").value.trim(),mail=$("#hoE
 
 /* ⌘K palette */
 const nav=p=>()=>{location.hash="#/"+p};
-const CMDS=[{n:"Home",h:"Page",f:nav("home")},{n:"About",h:"Page",f:nav("about")},{n:"Experience timeline",h:"Page",f:nav("experience")},{n:"Projects",h:"Page",f:nav("projects")},{n:"Product lab",h:"Page",f:()=>{location.hash="#/projects";setTimeout(()=>$("#lab").scrollIntoView({behavior:"smooth"}),80)}},{n:"Case studies",h:"Page",f:nav("work")},
+const CMDS=[{n:"Home",h:"Page",f:nav("home")},{n:"About",h:"Page",f:nav("about")},{n:"Experience timeline",h:"Page",f:nav("experience")},{n:"Projects",h:"Page",f:nav("projects")},{n:"Product lab",h:"Page",f:()=>{location.hash="#/projects";setTimeout(()=>$("#lab").scrollIntoView({behavior:"smooth"}),80)}},{n:"Case studies",h:"Page",f:nav("work")},{n:"Services · portfolio websites",h:"Page",f:nav("services")},{n:"Book a call",h:"Action",f:()=>openBooking()},{n:"Off the Clock",h:"Page",f:nav("offclock")},
  {n:"Open resume",h:"Action",f:openResume},{n:"Start recruiter tour",h:"Action",f:()=>startTour()},{n:"Chat with Promita",h:"Action",f:openChat},{n:"Email Promita",h:"Action",f:()=>location.href=MAILTO},{n:"Copy email address",h:"Action",f:()=>copyText(CONFIG.email)},{n:"Save contact card",h:"Action",f:saveVcard},{n:"Toggle light / dark",h:"Action",f:toggleTheme}];
 let cSel=0,cView=CMDS;
 function drawCmds(){const q=$("#palIn").value.toLowerCase();cView=CMDS.filter(c=>c.n.toLowerCase().includes(q));if(cSel>=cView.length)cSel=0;
@@ -865,11 +1209,13 @@ document.addEventListener("keydown",e=>{if((e.metaKey||e.ctrlKey)&&e.key.toLower
 /* recruiter tour (moves across pages) */
 const STEPS=[
  {p:"home",sel:"#hero",t:"Hi, I'm Promita 👋",d:"A Product Analyst who bridges business needs, data and engineering. Here's a quick tour."},
- {p:"home",sel:"#opento",t:"What I'm looking for",d:"Product Analyst, Business Analyst and Product Owner roles in the GTA."},
+ {p:"home",sel:"#opento",t:"Let's talk",d:"Happily building at Walmart Canada — but always open to interesting conversations."},
  {p:"about",sel:".window",t:"About me",d:"My story, current role and interests — laid out like Notes."},
- {p:"experience",sel:".window",t:"Experience",d:"A timeline from Bangladesh to Canada. Click any card for details."},
+ {p:"home",sel:"#homeExp",t:"Experience",d:"Browse my roles like an inbox — filter by product & BA, catalog & eCommerce, or education. The Experience page has a full timeline."},
  {p:"projects",sel:"#featured",t:"Projects",d:"Featured launches and fixes, plus my GitHub repositories and an interactive product lab."},
- {p:"work",sel:".list",t:"Case studies",d:"Each one told as problem → approach → result."},
+ {p:"home",sel:"#homeCases",t:"Case studies",d:"Real problems, told as problem → approach → result."},
+ {p:"services",sel:"#svcHero",t:"Services",d:"I also build portfolio websites for people worldwide — founding clients get 50% off."},
+ {p:"offclock",sel:"#travelMap",t:"Off the Clock",d:"Travels, recipes, music and hobbies — the human side."},
  {p:"home",sel:"#contact",t:"Let's connect",d:"Email me, save my contact card, or chat with my assistant anytime. Press ⌘K / Ctrl+K to search."}];
 let ti=-1;
 function showStep(){const s=STEPS[ti];if(!location.hash.includes(s.p))location.hash="#/"+s.p;
