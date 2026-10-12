@@ -546,6 +546,12 @@ body::before{content:"";position:fixed;inset:0;z-index:-2;pointer-events:none;ba
 .h2-photo{box-shadow:0 0 0 4px var(--tile),0 0 0 6px #b9dcf6!important}
 .ph-blur{background:radial-gradient(circle at 30% 30%,#cfe8fb 0%,transparent 55%),radial-gradient(circle at 75% 70%,#dce6fd 0%,transparent 55%),radial-gradient(circle at 70% 20%,#f3e6dc 0%,transparent 50%),#eef6fc!important}
 @media (prefers-reduced-motion:reduce){.hero2 h1 em,.logo span,.h2-stats b,.h2-name,.connect h2,.btn.primary,.hx-main,.cbtn.book,.chat-fab{animation:none!important}}
+
+.c-tools{display:flex;flex-wrap:wrap;align-items:center;gap:2px;margin-top:14px;padding-top:12px;border-top:1px dashed var(--line)}
+.c-tools>span:first-child{font-size:.72rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-right:8px}
+.sk-grid{row-gap:28px!important}
+.sk .chip{background:var(--soft);color:var(--accent)}
+@media (max-width:1000px) and (min-width:861px){.sk-grid{grid-template-columns:1fr 1fr!important}}
 </style>
 </head>
 <body>
@@ -559,6 +565,7 @@ body::before{content:"";position:fixed;inset:0;z-index:-2;pointer-events:none;ba
       <a href="#/about" data-p="about">About</a>
       <a href="#/experience" data-p="experience">Experience</a>
       <a href="#/projects" data-p="projects">Projects</a>
+      <a href="#/services" data-p="services">Services</a>
       <a href="#/offclock" data-p="offclock">Off the Clock</a>
     </nav>
     <div class="right">
@@ -578,7 +585,7 @@ body::before{content:"";position:fixed;inset:0;z-index:-2;pointer-events:none;ba
         <div class="h2-eyebrow"><span class="pdot"></span>Happily at Walmart Canada · Based in Ontario, Canada</div>
         <h1>I make product data <em>clear, correct</em> and ready to sell.</h1>
         <div class="typed"><span id="typed"></span><span class="cursor"></span></div>
-        <p>Product Information Analyst with <b>6+ years</b> across retail eCommerce, telecom and SaaS. I write clear requirements, test launches end to end, and trace tricky catalog issues back to the root cause.</p>
+        <p>Product Information Analyst with <b>5+ years</b> across retail eCommerce, telecom and SaaS. I write clear requirements, test launches end to end, and trace tricky catalog issues back to the root cause.</p>
         <div class="hx-btns">
           <button class="btn hx-main" data-tour>⚡ Website tour</button>
           <button class="btn" data-resume>View resume</button>
@@ -592,11 +599,11 @@ body::before{content:"";position:fixed;inset:0;z-index:-2;pointer-events:none;ba
         </div>
         <div class="h2-badges">
           <span class="bd green"><span class="pdot"></span>Open to conversations</span>
-          <span class="bd amber">Lean Six Sigma Green Belt</span>
+          <span class="bd amber">Google Data Analytics Certificate</span>
           <span class="bd plain">Master of Management · UWindsor</span>
         </div>
         <div class="h2-stats" id="stats">
-          <div><span>Years of experience</span><b data-count="6" data-suffix="+">6+</b></div>
+          <div><span>Years of experience</span><b data-count="5" data-suffix="+">5+</b></div>
           <div><span>Launches through UAT</span><b data-count="20" data-suffix="+">20+</b></div>
           <div><span>Revenue lift from a revamp</span><b data-count="9" data-suffix="%">9%</b></div>
           <div><span>Merchants supported</span><b data-count="1200" data-suffix="+">1,200+</b></div>
@@ -637,9 +644,12 @@ body::before{content:"";position:fixed;inset:0;z-index:-2;pointer-events:none;ba
     <div class="tile s12" id="skills">
       <div class="app"><span class="ico c1">◆</span>Skills</div>
       <div class="sk-grid">
-        <div class="sk"><div class="sk-h"><span class="sk-i" style="--c:#7c68b8">◎</span>Product &amp; business analysis</div><span class="chip">Requirements</span><span class="chip">User stories</span><span class="chip">Acceptance criteria</span><span class="chip">UAT</span><span class="chip">Process mapping</span><span class="chip">Agile / Scrum</span></div>
-        <div class="sk"><div class="sk-h"><span class="sk-i" style="--c:#5a88c0">▦</span>Data &amp; catalog</div><span class="chip">Root-cause analysis</span><span class="chip">Data quality</span><span class="chip">Product data (PIM)</span><span class="chip">SQL queries</span><span class="chip">Dashboards &amp; reporting</span><span class="chip">SOP writing</span></div>
-        <div class="sk"><div class="sk-h"><span class="sk-i" style="--c:#4f9b78">❋</span>People &amp; leadership</div><span class="chip">Stakeholder management</span><span class="chip">Cross-team collaboration</span><span class="chip">Knowledge sharing</span><span class="chip">Mentoring</span><span class="chip">Clear communication</span></div>
+        <div class="sk"><div class="sk-h"><span class="sk-i" style="--c:#6d5bd0">◎</span>Product &amp; business analysis</div><span class="chip">Requirements (BRD)</span><span class="chip">User stories</span><span class="chip">Acceptance criteria</span><span class="chip">UAT</span><span class="chip">Process mapping</span><span class="chip">Agile / Scrum</span></div>
+        <div class="sk"><div class="sk-h"><span class="sk-i" style="--c:#3d8fd1">▦</span>Data &amp; catalog</div><span class="chip">Root-cause analysis</span><span class="chip">Data quality</span><span class="chip">Product data (PIM)</span><span class="chip">Item setup &amp; attributes</span><span class="chip">GTIN / UPC</span><span class="chip">SOP writing</span></div>
+        <div class="sk"><div class="sk-h"><span class="sk-i" style="--c:#2f9e7a">❋</span>People &amp; leadership</div><span class="chip">Stakeholder management</span><span class="chip">Cross-team collaboration</span><span class="chip">Knowledge sharing</span><span class="chip">Mentoring</span><span class="chip">Clear communication</span></div>
+        <div class="sk"><div class="sk-h"><span class="sk-i" style="--c:#e08a3c">▤</span>Analytics &amp; reporting</div><span class="chip">SQL</span><span class="chip">Excel (pivots, XLOOKUP)</span><span class="chip">Power BI</span><span class="chip">Tableau</span><span class="chip">Looker</span><span class="chip">A/B testing</span></div>
+        <div class="sk"><div class="sk-h"><span class="sk-i" style="--c:#d0577f">⬡</span>eCommerce &amp; PIM platforms</div><span class="chip">Stibo STEP</span><span class="chip">Shopify</span><span class="chip">Magento</span><span class="chip">Salesforce</span><span class="chip">Google Analytics</span><span class="chip">Mixpanel</span></div>
+        <div class="sk"><div class="sk-h"><span class="sk-i" style="--c:#5b6b85">⚙</span>Delivery &amp; testing</div><span class="chip">JIRA</span><span class="chip">Confluence</span><span class="chip">ServiceNow</span><span class="chip">Postman (API testing)</span><span class="chip">Defect triage</span><span class="chip">Lean Six Sigma</span></div>
       </div>
     </div>
 
@@ -872,7 +882,7 @@ body::before{content:"";position:fixed;inset:0;z-index:-2;pointer-events:none;ba
     <h1>Promita Pew</h1>
     <div style="color:var(--muted);font-size:.88rem">Product Information Analyst · Ontario, Canada · promitapew@gmail.com · linkedin.com/in/promitapew</div>
     <h4>Summary</h4>
-    <p style="font-size:.9rem;margin:0">Product Information Analyst with 6+ years of experience in retail eCommerce, telecom and SaaS, including Canadian experience at Walmart Canada and Shopify. Skilled in turning business needs into clear requirements, user stories and UAT plans, and in using data to find the root cause of complex product and catalog issues. Collaborative communicator who builds trust with merchants, engineering teams and leadership.</p>
+    <p style="font-size:.9rem;margin:0">Product Information Analyst with 5+ years of experience in retail eCommerce, telecom and SaaS, including Canadian experience at Walmart Canada and Shopify. Skilled in turning business needs into clear requirements, user stories and UAT plans, and in using data to find the root cause of complex product and catalog issues. Collaborative communicator who builds trust with merchants, engineering teams and leadership.</p>
     <h4>Experience</h4><div id="resumeJobs"></div>
     <h4>Education</h4>
     <ul><li>Master of Management, Logistics &amp; Supply Chain — University of Windsor (Sep 2022 – Dec 2023)</li><li>BBA, Marketing — Jahangirnagar University (2015 – 2018)</li></ul>
@@ -1035,8 +1045,8 @@ const NOTES = {
 const FEATURED = [
   {cls:"bgA",span:"s7",kick:"Sales restored",title:"The best-seller nobody could buy",art:"☕",name:"Offer defect fix",sub:"Walmart Canada · root-cause analysis",case:0},
   {cls:"bgB",span:"s5",kick:"+9% revenue",title:"A telecom portfolio, rebuilt to 50 packs",art:"📶",name:"Robi 50 Pack Revamp",sub:"Robi Axiata · product & pricing",case:3},
-  {cls:"bgC",span:"s6",kick:"8M workers reached",title:"Free healthcare for garment workers",art:"🩺",name:"Maya × BGMEA",sub:"BRAC Mayalogy · partnerships",case:5},
-  {cls:"bgD",span:"s6",kick:"New market",title:"Taking Aarong to the USA",art:"🛍️",name:"Aarong USA site",sub:"BRAC Aarong · Magento launch",case:6}
+  {cls:"bgC",span:"s6",kick:"5 systems traced",title:"Wrong items picked in stores",art:"🏷️",name:"Barcode mismatch fix",sub:"Walmart Canada · root-cause analysis",case:1},
+  {cls:"bgD",span:"s6",kick:"New market",title:"Taking Aarong to the USA",art:"🛍️",name:"Aarong USA site",sub:"BRAC Aarong · Magento launch",case:5}
 ];
 const REPOS_FALLBACK = [
   {name:"portfolio-website",description:"A responsive portfolio site built with HTML, CSS and JavaScript.",language:"HTML",html_url:"https://github.com/promitapew/portfolio-website",homepage:"https://promitapew.github.io/portfolio-website/"},
@@ -1046,31 +1056,33 @@ const CASES = [
   {y:"2026",cat:"Root-cause analysis",min:3,title:"The best-seller nobody could buy",metric:"Sales restored",
    problem:"A top-selling product showed out of stock in stores that had it on the shelf, while a non-sellable duplicate stayed buyable — for two years.",
    approach:"Compared offer records across catalog and inventory systems and found two offers with their roles reversed. Coordinated catalog and inventory teams through a sync failure.",
-   result:"Correct offer live and verified in store; recurring sales protected and a request to scan for similar mismatches."},
+   result:"Correct offer live and verified in store; recurring sales protected and a request to scan for similar mismatches.",
+   tools:["Stibo STEP","SQL","Excel","Retail Link"]},
   {y:"2026",cat:"Root-cause analysis",min:3,title:"Wrong items picked in stores",metric:"5 systems traced",
    problem:"Stores in one region kept picking the wrong product for online orders.",
    approach:"Mapped every product identifier across five systems and proved a barcode update had never reached the product database.",
-   result:"Mapping corrected, store reports stopped, and a root-cause report presented to leadership."},
+   result:"Mapping corrected, store reports stopped, and a root-cause report presented to leadership.",
+   tools:["Stibo STEP","SQL","Excel","ServiceNow"]},
   {y:"2026",cat:"Data audit",min:2,title:"Auditing an AI grouping tool",metric:"Rollback triggered",
    problem:"An automated tool was grouping unrelated products as variants of each other.",
    approach:"Manually reviewed samples, found items missing from the tool's own report, and showed most sampled records were invalid.",
-   result:"Incorrect groups rolled back and a wider impact review launched."},
+   result:"Incorrect groups rolled back and a wider impact review launched.",
+   tools:["Stibo STEP","Excel","SQL"]},
   {y:"2022",cat:"Product delivery",min:3,title:"Revamping a telecom product portfolio",metric:"+9% revenue",
    problem:"A crowded internet and voice portfolio was hard for customers to navigate and had to meet new regulatory guidelines.",
    approach:"Wrote requirements and user stories, consolidated the portfolio into 50 compliant packs, aligned Engineering, Marketing and BI, and led UAT to launch.",
-   result:"9% revenue lift on the revamped digital internet product — one of 20+ launches taken from requirements to go-live."},
+   result:"9% revenue lift on the revamped digital internet product — one of 20+ launches taken from requirements to go-live.",
+   tools:["JIRA","Confluence","Excel","Tableau"]},
   {y:"2021",cat:"Product delivery",min:2,title:"Smoother checkout for a lifestyle retailer",metric:"+12% conversion",
    problem:"Shoppers were dropping off during checkout on a large retailer's website.",
    approach:"Contributed to the checkout redesign and tracked conversion, traffic and campaign KPIs.",
-   result:"Checkout conversion improved 12%."},
-  {y:"2020",cat:"Partnership",min:2,title:"Free healthcare for garment workers",metric:"~8M workers",
-   problem:"During COVID-19, millions of ready-made-garment workers in Bangladesh had little access to healthcare advice.",
-   approach:"Helped lead a partnership between Maya and BGMEA to offer free digital healthcare to factory workers.",
-   result:"Free healthcare access made available to roughly 8 million RMG workers."},
+   result:"Checkout conversion improved 12%.",
+   tools:["Magento","Google Analytics","Excel"]},
   {y:"2021",cat:"Product delivery",min:2,title:"Taking a retailer to the USA",metric:"New market",
    problem:"Aarong needed a US website tailored to a new market's expectations.",
    approach:"Coordinated customization of the US site with an offshore Magento team and cross-functional partners.",
-   result:"Aarong's US website launched."}
+   result:"Aarong's US website launched.",
+   tools:["Magento","JIRA","Excel"]}
 ];
 
 /* ===== helpers ===== */
@@ -1228,7 +1240,7 @@ fetch(`https://api.github.com/users/${CONFIG.github}/repos?sort=pushed&per_page=
 $("#workCount").textContent=CASES.length+" case studies, newest first";
 const sorted=CASES.map((c,i)=>({...c,i})).sort((a,b)=>b.y-a.y);
 let lastY="";$("#workList").innerHTML=sorted.map(c=>{const y=c.y!==lastY?c.y:"";lastY=c.y;return `<div class="lrow" data-case="${c.i}"><span class="yy">${y}</span><span class="t">${esc(c.title)}</span><span class="k">${esc(c.cat)}</span><span class="m">${c.min} min</span></div>`}).join("");
-function openCase(i){const c=CASES[i];$("#caseBody").innerHTML=`<button class="round x" data-close>✕</button><div class="eyebrow">${esc(c.cat)} · ${c.y}</div><div style="font-size:1.7rem;font-weight:800;color:var(--accent);margin-top:6px">${esc(c.metric)}</div><h2 style="font-size:1.5rem;margin:4px 0 10px">${esc(c.title)}</h2><dl><dt>Problem</dt><dd>${esc(c.problem)}</dd><dt>Approach</dt><dd>${esc(c.approach)}</dd><dt>Result</dt><dd>${esc(c.result)}</dd></dl><p style="color:var(--muted);font-size:.78rem;font-style:italic;margin-top:16px">Employer work — details generalized to protect confidential information.</p>`;openOv("#caseOv")}
+function openCase(i){const c=CASES[i];$("#caseBody").innerHTML=`<button class="round x" data-close>✕</button><div class="eyebrow">${esc(c.cat)} · ${c.y}</div><div style="font-size:1.7rem;font-weight:800;color:var(--accent);margin-top:6px">${esc(c.metric)}</div><h2 style="font-size:1.5rem;margin:4px 0 10px">${esc(c.title)}</h2><dl><dt>Problem</dt><dd>${esc(c.problem)}</dd><dt>Approach</dt><dd>${esc(c.approach)}</dd><dt>Result</dt><dd>${esc(c.result)}</dd></dl>${(c.tools||[]).length?`<div class="c-tools"><span>Tools used</span>${c.tools.map(t=>`<span class="chip">${esc(t)}</span>`).join("")}</div>`:""}<p style="color:var(--muted);font-size:.78rem;font-style:italic;margin-top:16px">Employer work — details generalized to protect confidential information.</p>`;openOv("#caseOv")}
 document.addEventListener("click",e=>{const t=e.target.closest("[data-case]");if(t)openCase(+t.dataset.case)});
 
 const TOOLS=[["Stibo STEP", "<svg viewBox=\"0 0 24 24\"><rect width=\"24\" height=\"24\" rx=\"6\" fill=\"#0A6EBD\"/><text x=\"12\" y=\"16.5\" text-anchor=\"middle\" font-family=\"Arial,sans-serif\" font-weight=\"700\" font-size=\"11\" fill=\"#fff\">S</text></svg>"], ["SQL", "<svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"#5a88c0\" stroke-width=\"2\"><ellipse cx=\"12\" cy=\"5\" rx=\"8\" ry=\"3\"/><path d=\"M4 5v14c0 1.7 3.6 3 8 3s8-1.3 8-3V5M4 12c0 1.7 3.6 3 8 3s8-1.3 8-3\"/></svg>"], ["Excel", "<svg viewBox=\"0 0 24 24\"><rect width=\"24\" height=\"24\" rx=\"6\" fill=\"#1D6F42\"/><text x=\"12\" y=\"16.5\" text-anchor=\"middle\" font-family=\"Arial,sans-serif\" font-weight=\"700\" font-size=\"11\" fill=\"#fff\">X</text></svg>"], ["Power BI", "<svg viewBox=\"0 0 24 24\"><rect x=\"3\" y=\"11\" width=\"4\" height=\"10\" rx=\"1\" fill=\"#F2C811\"/><rect x=\"9\" y=\"7\" width=\"4\" height=\"14\" rx=\"1\" fill=\"#E8B10A\"/><rect x=\"15\" y=\"3\" width=\"4\" height=\"18\" rx=\"1\" fill=\"#C99A06\"/></svg>"], ["Tableau", "<svg viewBox=\"0 0 24 24\" fill=\"#E97627\"><path d=\"M11.654.174V2.377H9.682v.58h1.972V5.16h.696V2.957h1.97v-.58h-1.97V.174h-.348zm6.03 2.262l-.002 1.623v1.623h-2.957v.927h2.957v3.188H18.725l.011-1.582.02-1.576 1.465-.02 1.46-.01v-.927H18.728V2.436h-.522zm-12.407.06V5.686H2.291v.925H5.277V9.801h.985V6.61h3.013v-.925H6.262V2.496H5.77zm6.086 5.27v3.593H8.06v1.188h3.304v3.596h1.28v-3.596H15.953v-1.188H12.643V7.766h-.637zm9.721 1.55v2.221h-2.012v.811h2.012v2.261h.887v-2.261H24v-.811h-2.029V9.317h-.422zm-19.111.131V11.621H0v.621H1.973v2.194H2.64v-2.194h2v-.62H2.609V9.446h-.318zm15.709 4.516v3.254h-3.016v.927h3.016v3.217h1.072v-3.216H21.74v-.928H18.754v-3.254h-.533zm-12.463.008v3.246H2.262v.928h2.957v3.189H6.32v-3.189h2.955v-.928H6.32V13.97h-.55zm6.316 4.578l.002 1.103v1.1H9.566v.812h1.971v2.262h.928l.012-1.119.017-1.143H14.463v-.812h-2V18.549h-.465z\"/></svg>"], ["Looker", "<svg viewBox=\"0 0 24 24\" fill=\"#4285F4\"><path d=\"M11.9475 0c-1.1598.0021-2.0982.944-2.096 2.1038a2.1 2.1 0 00.356 1.166l.895-.8959a.884.884 0 11.565.564l-.895.895c.9593.6478 2.2621.3953 2.91-.564.6478-.9593.3953-2.262-.564-2.91A2.096 2.096 0 0011.9475 0zm-.835 6.1128a3.2629 3.2629 0 00-.653-1.965l-1.164 1.162a1.667 1.667 0 01-.318 2.012l.632 1.5449a3.2819 3.2819 0 001.503-2.754zm-3.2499 1.666h-.03c-.9217.0009-1.6697-.7455-1.6707-1.6673-.001-.9217.7454-1.6697 1.6672-1.6707a1.669 1.669 0 01.9195.275l1.152-1.152c-1.4069-1.141-3.4724-.9257-4.6135.4811s-.9257 3.4723.481 4.6135a3.2799 3.2799 0 002.7275.6652l-.633-1.5439v-.001zm4.1279 1.3359c-.728 0-1.452.106-2.15.315l.922 2.2519c2.6872-.6819 5.4184.9438 6.1002 3.631.6818 2.6873-.9439 5.4184-3.6311 6.1002s-5.4184-.9439-6.1002-3.631c-.5682-2.2394.4655-4.5774 2.5041-5.6643l-.91-2.2449c-3.6908 1.808-5.2173 6.2657-3.4093 9.9567l.0005.001c1.808 3.6909 6.2657 5.2173 9.9567 3.4093l.001-.0005c3.6913-1.8071 5.2187-6.2645 3.4116-9.9558a7.4417 7.4417 0 00-6.6865-4.1696h-.008l-.001.001z\"/></svg>"], ["Shopify", "<svg viewBox=\"0 0 24 24\" fill=\"#7AB55C\"><path d=\"M15.337 23.979l7.216-1.561s-2.604-17.613-2.625-17.73c-.018-.116-.114-.192-.211-.192s-1.929-.136-1.929-.136-1.275-1.274-1.439-1.411c-.045-.037-.075-.057-.121-.074l-.914 21.104h.023zM11.71 11.305s-.81-.424-1.774-.424c-1.447 0-1.504.906-1.504 1.141 0 1.232 3.24 1.715 3.24 4.629 0 2.295-1.44 3.76-3.406 3.76-2.354 0-3.54-1.465-3.54-1.465l.646-2.086s1.245 1.066 2.28 1.066c.675 0 .975-.545.975-.932 0-1.619-2.654-1.694-2.654-4.359-.034-2.237 1.571-4.416 4.827-4.416 1.257 0 1.875.361 1.875.361l-.945 2.715-.02.01zM11.17.83c.136 0 .271.038.405.135-.984.465-2.064 1.639-2.508 3.992-.656.213-1.293.405-1.889.578C7.697 3.75 8.951.84 11.17.84V.83zm1.235 2.949v.135c-.754.232-1.583.484-2.394.736.466-1.777 1.333-2.645 2.085-2.971.193.501.309 1.176.309 2.1zm.539-2.234c.694.074 1.141.867 1.429 1.755-.349.114-.735.231-1.158.366v-.252c0-.752-.096-1.371-.271-1.871v.002zm2.992 1.289c-.02 0-.06.021-.078.021s-.289.075-.714.21c-.423-1.233-1.176-2.37-2.508-2.37h-.115C12.135.209 11.669 0 11.265 0 8.159 0 6.675 3.877 6.21 5.846c-1.194.365-2.063.636-2.16.674-.675.213-.694.232-.772.87-.075.462-1.83 14.063-1.83 14.063L15.009 24l.927-21.166z\"/></svg>"], ["Magento", "<svg viewBox=\"0 0 24 24\" fill=\"#EE672F\"><path d=\"M12 24l-4.455-2.572v-12l2.97-1.715v12.001l1.485.902 1.485-.902V7.713l2.971 1.715v12L12 24zM22.391 6v12l-2.969 1.714V7.713L12 3.43 4.574 7.713v12.001L1.609 18V6L12 0l10.391 6z\"/></svg>"], ["Salesforce", "<svg viewBox=\"0 0 24 24\" fill=\"#00A1E0\"><path d=\"M10.006 5.415a4.195 4.195 0 013.045-1.306c1.56 0 2.954.9 3.69 2.205.63-.3 1.35-.45 2.1-.45 2.85 0 5.159 2.34 5.159 5.22s-2.31 5.22-5.176 5.22c-.345 0-.69-.044-1.02-.104a3.75 3.75 0 01-3.3 1.95c-.6 0-1.155-.15-1.65-.375A4.314 4.314 0 018.88 20.4a4.302 4.302 0 01-4.05-2.82c-.27.062-.54.076-.825.076-2.204 0-4.005-1.8-4.005-4.05 0-1.5.811-2.805 2.01-3.51-.255-.57-.39-1.2-.39-1.846 0-2.58 2.1-4.65 4.65-4.65 1.53 0 2.85.705 3.72 1.8\"/></svg>"], ["JIRA", "<svg viewBox=\"0 0 24 24\" fill=\"#0052CC\"><path d=\"M11.571 11.513H0a5.218 5.218 0 0 0 5.232 5.215h2.13v2.057A5.215 5.215 0 0 0 12.575 24V12.518a1.005 1.005 0 0 0-1.005-1.005zm5.723-5.756H5.736a5.215 5.215 0 0 0 5.215 5.214h2.129v2.058a5.218 5.218 0 0 0 5.215 5.214V6.758a1.001 1.001 0 0 0-1.001-1.001zM23.013 0H11.455a5.215 5.215 0 0 0 5.215 5.215h2.129v2.057A5.215 5.215 0 0 0 24 12.483V1.005A1.001 1.001 0 0 0 23.013 0Z\"/></svg>"], ["Confluence", "<svg viewBox=\"0 0 24 24\" fill=\"#2684FF\"><path d=\"M.87 18.257c-.248.382-.53.875-.763 1.245a.764.764 0 0 0 .255 1.04l4.965 3.054a.764.764 0 0 0 1.058-.26c.199-.332.454-.763.733-1.221 1.967-3.247 3.945-2.853 7.508-1.146l4.957 2.337a.764.764 0 0 0 1.028-.382l2.364-5.346a.764.764 0 0 0-.382-1 599.851 599.851 0 0 1-4.965-2.361C10.911 10.97 5.224 11.185.87 18.257zM23.131 5.743c.249-.405.531-.875.764-1.25a.764.764 0 0 0-.256-1.034L18.675.404a.764.764 0 0 0-1.058.26c-.195.335-.451.763-.734 1.225-1.966 3.246-3.945 2.85-7.508 1.146L4.437.694a.764.764 0 0 0-1.027.382L1.046 6.422a.764.764 0 0 0 .382 1c1.039.49 3.105 1.467 4.965 2.361 6.698 3.246 12.392 3.029 16.738-4.04z\"/></svg>"], ["ServiceNow", "<svg viewBox=\"0 0 24 24\"><rect width=\"24\" height=\"24\" rx=\"6\" fill=\"#62D84E\"/><text x=\"12\" y=\"16.5\" text-anchor=\"middle\" font-family=\"Arial,sans-serif\" font-weight=\"700\" font-size=\"9\" fill=\"#032D42\">now</text></svg>"], ["Postman", "<svg viewBox=\"0 0 24 24\" fill=\"#FF6C37\"><path d=\"M13.527.099C6.955-.744.942 3.9.099 10.473c-.843 6.572 3.8 12.584 10.373 13.428 6.573.843 12.587-3.801 13.428-10.374C24.744 6.955 20.101.943 13.527.099zm2.471 7.485a.855.855 0 0 0-.593.25l-4.453 4.453-.307-.307-.643-.643c4.389-4.376 5.18-4.418 5.996-3.753zm-4.863 4.861l4.44-4.44a.62.62 0 1 1 .847.903l-4.699 4.125-.588-.588zm.33.694l-1.1.238a.06.06 0 0 1-.067-.032.06.06 0 0 1 .01-.073l.645-.645.512.512zm-2.803-.459l1.172-1.172.879.878-1.979.426a.074.074 0 0 1-.085-.039.072.072 0 0 1 .013-.093zm-3.646 6.058a.076.076 0 0 1-.069-.083.077.077 0 0 1 .022-.046h.002l.946-.946 1.222 1.222-2.123-.147zm2.425-1.256a.228.228 0 0 0-.117.256l.203.865a.125.125 0 0 1-.211.117h-.003l-.934-.934-.294-.295 3.762-3.758 1.82-.393.874.874c-1.255 1.102-2.971 2.201-5.1 3.268zm5.279-3.428h-.002l-.839-.839 4.699-4.125a.952.952 0 0 0 .119-.127c-.148 1.345-2.029 3.245-3.977 5.091zm3.657-6.46l-.003-.002a1.822 1.822 0 0 1 2.459-2.684l-1.61 1.613a.119.119 0 0 0 0 .169l1.247 1.247a1.817 1.817 0 0 1-2.093-.343zm2.578 0a1.714 1.714 0 0 1-.271.218h-.001l-1.207-1.207 1.533-1.533c.661.72.637 1.832-.054 2.522zM18.855 6.05a.143.143 0 0 0-.053.157.416.416 0 0 1-.053.45.14.14 0 0 0 .023.197.141.141 0 0 0 .084.03.14.14 0 0 0 .106-.05.691.691 0 0 0 .087-.751.138.138 0 0 0-.194-.033z\"/></svg>"], ["Mixpanel", "<svg viewBox=\"0 0 24 24\" fill=\"#7856FF\"><path d=\"M6.967 9.996h3.053c-.763-.477-1.048-1.145-1.431-2.384L7.443 3.366C6.919 1.458 6.49.551 4.39.551H.004v1.145h.621c1.286 0 1.431.477 1.814 1.908L3.44 7.326c.524 1.814 1.337 2.67 3.53 2.67h-.003Zm7.06 0h3.053c2.194 0 2.956-.86 3.484-2.67l1.001-3.722c.382-1.431.57-1.908 1.814-1.908H24V.551h-4.34c-2.146 0-2.576.86-3.053 2.815l-1.145 4.246c-.384 1.286-.673 1.907-1.435 2.384Zm-4.007 4.008h4.007V9.996H10.02v4.008ZM0 23.449h4.39c2.1 0 2.529-.907 3.053-2.815l1.146-4.246c.383-1.239.668-1.907 1.431-2.384H6.967c-2.194 0-3.007.86-3.531 2.67l-1.001 3.722c-.383 1.431-.524 1.907-1.814 1.907H0v1.146Zm19.65 0h4.343v-1.146h-.622c-1.239 0-1.431-.476-1.814-1.907l-1.001-3.722c-.524-1.814-1.286-2.67-3.483-2.67h-3.046c.762.477 1.041 1.098 1.424 2.384l1.145 4.246c.477 1.955.907 2.815 3.054 2.815Z\"/></svg>"], ["Google Analytics", "<svg viewBox=\"0 0 24 24\" fill=\"#E37400\"><path d=\"M22.84 2.9982v17.9987c.0086 1.6473-1.3197 2.9897-2.967 2.9984a2.9808 2.9808 0 01-.3677-.0208c-1.528-.226-2.6477-1.5558-2.6105-3.1V3.1204c-.0369-1.5458 1.0856-2.8762 2.6157-3.1 1.6361-.1915 3.1178.9796 3.3093 2.6158.014.1201.0208.241.0202.3619zM4.1326 18.0548c-1.6417 0-2.9726 1.331-2.9726 2.9726C1.16 22.6691 2.4909 24 4.1326 24s2.9726-1.3309 2.9726-2.9726-1.331-2.9726-2.9726-2.9726zm7.8728-9.0098c-.0171 0-.0342 0-.0513.0003-1.6495.0904-2.9293 1.474-2.891 3.1256v7.9846c0 2.167.9535 3.4825 2.3505 3.763 1.6118.3266 3.1832-.7152 3.5098-2.327.04-.1974.06-.3983.0593-.5998v-8.9585c.003-1.6474-1.33-2.9852-2.9773-2.9882z\"/></svg>"], ["R", "<svg viewBox=\"0 0 24 24\" fill=\"#276DC3\"><path d=\"M12 2.746c-6.627 0-12 3.599-12 8.037 0 3.897 4.144 7.144 9.64 7.88V16.26c-2.924-.915-4.925-2.755-4.925-4.877 0-3.035 4.084-5.494 9.12-5.494 5.038 0 8.757 1.683 8.757 5.494 0 1.976-.999 3.379-2.662 4.272.09.066.174.128.258.216.169.149.25.363.372.544 2.128-1.45 3.44-3.437 3.44-5.631 0-4.44-5.373-8.038-12-8.038zm-2.111 4.99v13.516l4.093-.002-.002-5.291h1.1c.225 0 .321.066.549.25.272.22.715.982.715.982l2.164 4.063 4.627-.002-2.864-4.826s-.086-.193-.265-.383a2.22 2.22 0 00-.582-.416c-.422-.214-1.149-.434-1.149-.434s3.578-.264 3.578-3.826c0-3.562-3.744-3.63-3.744-3.63zm4.127 2.93l2.478.002s1.149-.062 1.149 1.127c0 1.165-1.149 1.17-1.149 1.17h-2.478zm1.754 6.119c-.494.049-1.012.079-1.54.088v1.807a16.622 16.622 0 002.37-.473l-.471-.891s-.108-.183-.248-.394c-.039-.054-.08-.098-.111-.137z\"/></svg>"]];
@@ -1240,19 +1252,14 @@ if(!del&&ci<w.length){ci++;setTimeout(tick,70)}else if(!del){del=true;setTimeout
 /* home: mail-style experience */
 const TAGS={"Walmart Canada":["Stibo STEP","SQL","UAT","Root-cause analysis"],"Shopify":["APIs","SQL","Defect triage","Mentoring"],"Sutherland Global (AT&T)":["Log analysis","SOPs"],"University of Windsor":["Supply chain","Mentoring"],"Jahangirnagar University":["Marketing","Business strategy"],"Robi Axiata":["BRDs","User stories","UAT","Pricing"],"BRAC Aarong":["Magento","Conversion","Catalog"],"BRAC Mayalogy (Maya Apa)":["Requirements","Mixpanel","UAT"]};
 const CERTS=[
- {org:"LinkedIn Learning",role:"Postman Essential Training",start:"2026-01",bullets:["Testing and documenting APIs with Postman: requests, collections, environments and simple test scripts."],tags:["API testing","Postman"]},
- {org:"LinkedIn Learning",role:"Modern Project Management in Microsoft 365",start:"2024-12",bullets:["Planning and tracking projects with Microsoft 365 tools."],tags:["Project management"]},
- {org:"Six Sigma Global Institute",role:"Lean Six Sigma Green Belt – Level II",start:"2024-09",exp:"Dec 2030",id:"115443854",bullets:["Process improvement with DMAIC: defining problems, measuring, finding root causes and controlling the fix."],tags:["Lean Six Sigma","Process improvement","Analytical skills"]},
- {org:"DataCamp",role:"Data Science for Business",start:"2024-05",id:"#32,666,071",bullets:["Using data science to answer business questions, including A/B testing and machine-learning basics."],tags:["A/B testing","Machine learning"]},
- {org:"DataCamp",role:"Introduction to Power BI",start:"2024-05",id:"#27,917,370",bullets:["Cleaning and shaping data in Power Query and building interactive reports."],tags:["Power BI","Power Query"]},
- {org:"DataCamp",role:"Understanding Data Engineering",start:"2023-09",bullets:["How data pipelines, storage and cloud processing fit together."],tags:["Data processing","Cloud computing"]},
  {org:"Google",role:"Google Data Analytics Professional Certificate",start:"2023-04",id:"KFQNC9ETPYLU",bullets:["8-course program: asking the right questions, preparing and cleaning data, analysis, visualization in Tableau, and R programming.","Recommended for 12 college credits by the American Council on Education (ACE).","Capstone case study completed Feb 2023."],tags:["SQL","Spreadsheets","Tableau","R"]},
- {org:"DataCamp",role:"SQL for Joining Data",start:"2023-04",id:"#18,943,886",bullets:["Combining tables with inner, outer, self and set joins."],tags:["SQL"]},
+ {org:"Six Sigma Global Institute",role:"Lean Six Sigma Green Belt – Level II",start:"2024-09",exp:"Dec 2030",id:"115443854",bullets:["Process improvement with DMAIC: defining problems, measuring, finding root causes and controlling the fix."],tags:["Lean Six Sigma","Process improvement","Root-cause analysis"]},
  {org:"Google",role:"Foundations of Project Management",start:"2023-01",id:"223BSK72XL9U",bullets:["Project roles, the project life cycle, methodologies, and how culture shapes project outcomes."],tags:["Project management","Change management"]},
- {org:"DataCamp",role:"Introduction to SQL & Spreadsheets",start:"2021-04",bullets:["Introduction to SQL, Data Analysis in Spreadsheets and Intermediate Spreadsheets."],tags:["SQL","Spreadsheets"]},
- {org:"Google",role:"Google Analytics for Beginners",start:"2019-11",bullets:["Setting up tracking and reading audience, acquisition and behaviour reports."],tags:["Google Analytics"]},
- {org:"BITM (BASIS Institute)",role:"Digital Marketing",start:"2016-12",bullets:["SEO, social media and online campaign basics."],tags:["Digital marketing"]}];
-const MF=[["all","All mail"],["product","Product & BA"],["data","Catalog & eCommerce"],["edu","Education"],["cert","Certifications"]];
+ {org:"DataCamp",role:"Introduction to Power BI",start:"2024-05",id:"#27,917,370",bullets:["Cleaning and shaping data in Power Query and building interactive reports."],tags:["Power BI","Power Query"]},
+ {org:"DataCamp",role:"SQL for Joining Data",start:"2023-04",id:"#18,943,886",bullets:["Combining tables with inner, outer, self and set joins."],tags:["SQL"]},
+ {org:"DataCamp",role:"Data Science for Business",start:"2024-05",id:"#32,666,071",bullets:["Using data to answer business questions, including A/B testing and machine-learning basics."],tags:["A/B testing","Business analysis"]},
+ {org:"LinkedIn Learning",role:"Postman Essential Training",start:"2026-01",bullets:["Testing and documenting APIs with Postman: requests, collections, environments and simple test scripts."],tags:["API testing","Postman"]}];
+const MF=[["all","All"],["product","Product & BA"],["data","Catalog & eCommerce"],["edu","Education"],["cert","Certifications"]];
 let mF="all",mS=0;
 function drawMail(){const all=[...EXP].reverse();const v=mF==="cert"?CERTS:all.filter(e=>mF==="all"||e.cat===mF);if(mS>=v.length)mS=0;
   $("#mSide").innerHTML='<div class="lbl">Mailboxes</div>'+MF.map(([k,n])=>`<button class="mfolder ${k===mF?"on":""}" data-k="${k}">${n}<span>${k==="all"?all.length:k==="cert"?CERTS.length:all.filter(e=>e.cat===k).length}</span></button>`).join("");
@@ -1263,12 +1270,12 @@ function drawMail(){const all=[...EXP].reverse();const v=mF==="cert"?CERTS:all.f
 drawMail();
 
 /* home: notes-style case studies */
-const CF=[["all","All"],["Root-cause analysis","Root-cause analysis"],["Data audit","Data audits"],["Product delivery","Product delivery"],["Partnership","Partnerships"]];
+const CF=[["all","All"],["Root-cause analysis","Root-cause analysis"],["Data audit","Data audits"],["Product delivery","Product delivery"]];
 let cF="all",cS=0;
 function drawCaseNotes(){const v=CASES.filter(c=>cF==="all"||c.cat===cF);if(cS>=v.length)cS=0;
   $("#cFilters").innerHTML=CF.map(([k,n])=>`<button class="fbtn ${k===cF?"on":""}" data-k="${k}">${n}</button>`).join("");
   $("#cList").innerHTML=v.map((c,i)=>`<button class="citem ${i===cS?"on":""}" data-i="${i}"><b>${esc(c.title)}</b><span>${esc(c.metric)}</span></button>`).join("");
-  const c=v[cS];$("#cBody").innerHTML=`<div class="metric">${esc(c.metric)}</div><h3>${esc(c.title)}</h3><dl><dt>Problem</dt><dd>${esc(c.problem)}</dd><dt>Approach</dt><dd>${esc(c.approach)}</dd><dt>Result</dt><dd>${esc(c.result)}</dd></dl><div style="margin-top:12px"><span class="chip">${esc(c.cat)}</span><span class="chip">${c.y}</span></div><p style="color:var(--muted);font-size:.78rem;font-style:italic;margin:14px 0 0">Employer work — details generalized to protect confidential information.</p>`;
+  const c=v[cS];$("#cBody").innerHTML=`<div class="metric">${esc(c.metric)}</div><h3>${esc(c.title)}</h3><dl><dt>Problem</dt><dd>${esc(c.problem)}</dd><dt>Approach</dt><dd>${esc(c.approach)}</dd><dt>Result</dt><dd>${esc(c.result)}</dd></dl>${(c.tools||[]).length?`<div class="c-tools"><span>Tools used</span>${c.tools.map(t=>`<span class="chip">${esc(t)}</span>`).join("")}</div>`:""}<div style="margin-top:10px"><span class="chip">${esc(c.cat)}</span><span class="chip">${c.y}</span></div><p style="color:var(--muted);font-size:.78rem;font-style:italic;margin:14px 0 0">Employer work — details generalized to protect confidential information.</p>`;
   $$("#cFilters .fbtn").forEach(b=>b.onclick=()=>{cF=b.dataset.k;cS=0;drawCaseNotes()});
   $$("#cList .citem").forEach(b=>b.onclick=()=>{cS=+b.dataset.i;drawCaseNotes();if(innerWidth<760)$("#cBody").scrollIntoView({behavior:"smooth",block:"nearest"})});}
 drawCaseNotes();
@@ -1336,11 +1343,11 @@ loadSql();
 
 /* chat: instant answers + hand-off to Promita */
 const KB=[
- {k:["experience","work","job","career","background","history"],a:"6+ years across retail eCommerce, telecom and SaaS: Product Information Analyst at Walmart Canada (now), Shopify and Sutherland in Canada, plus product and BA roles at Robi Axiata, BRAC Aarong and BRAC Mayalogy in Bangladesh."},
+ {k:["experience","work","job","career","background","history"],a:"5+ years across retail eCommerce, telecom and SaaS: Product Information Analyst at Walmart Canada (now), Shopify and Sutherland in Canada, plus product and BA roles at Robi Axiata, BRAC Aarong and BRAC Mayalogy in Bangladesh."},
  {k:["walmart","current","now","catalog","pim","today"],a:"At Walmart Canada she owns catalog health for a large grocery portfolio, leads root-cause analysis across systems, and restored sales on a top-selling product line by fixing a long-standing offer defect."},
  {k:["skill","sql","tool","tableau","excel","stack","power bi"],a:"Requirements, user stories, UAT and root-cause analysis; SQL, Excel, Tableau, Power BI; Stibo STEP, Magento, Shopify; JIRA, ServiceNow, Confluence, Salesforce."},
  {k:["product owner","po","requirement","uat","launch","business analyst","ba ","product analyst","roles","open to","looking"],a:"She loves her current role and team at Walmart Canada, so she isn't actively looking — but she's always open to discussing interesting opportunities. At Robi Axiata she owned requirements and UAT for 20+ launches and led a revamp that lifted revenue 9%."},
- {k:["project","case","example","achievement","portfolio","github"],a:"Highlights: a long-standing offer-defect fix, a multi-system store-picking investigation, an AI grouping audit, a 50-pack telecom portfolio revamp (+9% revenue), the Aarong USA site launch and free healthcare for ~8M garment workers. See Projects and Case studies."},
+ {k:["project","case","example","achievement","portfolio","github"],a:"Highlights: a long-standing offer-defect fix, a multi-system store-picking investigation, an AI grouping audit, a 50-pack telecom portfolio revamp (+9% revenue), a checkout redesign (+12% conversion) and the Aarong USA site launch. See Projects and Case studies."},
  {k:["award","recognition","leader","leadership","team","stakeholder","mentor"],a:"She received Walmart Canada's Above & Beyond Baton Award within 4 months, partners with merchants and cross-functional teams, hosts team feedback sessions and a Learn Series, and has mentored 10 new hires."},
  {k:["education","degree","study","master","university","school","pmp"],a:"Master of Management in Logistics & Supply Chain from the University of Windsor (Dean's Award), and a BBA in Marketing from Jahangirnagar University. She's also studying project management with a PMP study community."},
  {k:["cert","certificate","course"],a:"Google Data Analytics Certificate; DataCamp SQL and Power BI; LinkedIn Learning Agile Fundamentals and Project Management."},
